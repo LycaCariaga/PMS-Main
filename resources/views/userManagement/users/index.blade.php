@@ -49,7 +49,6 @@
                                                                 <i class="fas fa-edit"></i>
                                                             </button>
                                                     </div> -->
-                                                    <!-- binago -->
                                                     <button type="button" class="btn btn-success btn-md mr-5 user-update"
                                                                 data-toggle="modal" data-target=".bd-update-modal-lg" 
                                                                 data-uid="{{$user->id}}"
@@ -59,7 +58,7 @@
                                                                 data-role="{{$user->role}}"
                                                                 data-ea="{{$user->email}}"
                                                                 data-un="{{$user->username}}">
-                                                            
+                                                                
                                                                
                                                                 <i class="fas fa-edit"></i>
                                                             </button>
@@ -99,7 +98,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <form method="POST" id="update" >
+                    <form method="GET" id="update" >
          
                         @csrf
                         <div class="card-body">
@@ -196,6 +195,8 @@
                                     </div>
                                 </div>
 
+                              
+
                                 <div class="modal-footer text-right">
                                     <div class="container d-flex justify-content-center">
                                         <button type="submit" class="btn btn-icon icon-left btn-primary mr-3"><i
@@ -211,138 +212,7 @@
             </div>
         </div>
     </div> 
-    <!-- binago -->
- <!-- <div class="modal fade bd-update-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Edit User</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
-                <div class="modal-body">
-                    <form action="/update/{{$user->id}}"method="POST" id="update" >
-                      
-                       
-                      @csrf 
-                        
-                        <div class="card-body">
-                            <div class="row d-flex justify-content-center">
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>First Name</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fas fa-user"></i>
-                                                </div>
-                                            </div>
-                                        <input type="text" name="firstName"  value="{{$user->firstName}}" class="form-control phone-number" required>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Last Name</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fas fa-user"></i>
-                                                </div>
-                                            </div>
-                                            <input type="text" name="lastName" value="{{$user->lastName}}" class="form-control phone-number" required>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Company</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fas fa-user"></i>
-                                                </div>
-                                            </div>
-                                            <input type="text" name="company" value="{{$user->company}}" class="form-control phone-number" required>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Role</label>
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="fas fa-address-card"></i>
-                                            </div>
-                                            <select class="form-control" name = "role">
-                                               
-                                                @foreach ($roles as $role)
-                                                <option value = "{{$role->name}}">{{$role->name}}</option>
-                                                @endforeach                                                     
-                                              </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Email Address</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fas fa-user"></i>
-                                                </div>
-                                            </div>
-                                            <input type="text" name="email" value="{{$user->email}}" class="form-control phone-number" required>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label>Username</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">
-                                                    <i class="fas fa-user"></i>
-                                                </div>
-                                            </div>
-                                            <input type="text" name="username" value="{{$user->username}}" class="form-control phone-number" required>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                     
-                               
-                               
-                                <div class="modal-footer text-right">
-                                    <div class="container d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-icon icon-left btn-primary mr-3"><i
-                                                class="far fa-save"></i> Save</button>
-                                        <button type="button" class="btn btn-icon icon-left btn-danger mr-3"
-                                            data-dismiss="modal"><i class="fas fa-ban"></i>Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>  -->
+ 
     <!-- Large modal -->
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">

@@ -29,7 +29,7 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function(){
     //edit functionality
     // Route::get('/edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
     // Route::post('/update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
-    Route::post('/update/{id}', [App\Http\Controllers\UserController::class, 'update']);
+    Route::get('/update/{id}', [App\Http\Controllers\UserController::class, 'update']);
     
 });
 
