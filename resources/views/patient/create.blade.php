@@ -2,213 +2,212 @@
 
 @section('content')
 
-    <section class="section">
-        <div class="section-header">
-            <h3 class="page__heading">Patient Management</h3>
-        </div>
-        <div class="section-body">
-          <div class="row">
-           <div class="col-lg-12">
-            <div class="card">
-             <div class="card-header d-flex justify-content-start bg-primary">
+<section class="section">
+  <div class="section-header">
+    <h3 class="page__heading">Patient Management</h3>
+  </div>
+    <div class="section-body">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-header d-flex justify-content-start bg-primary">
               <div>
-               <h5 class = "ml-5 mb-0 text-white">Basic Information</h5>
+                <h5 class = "ml-5 mb-0 text-white">Basic Information</h5>
               </div>
-             </div>
+            </div>
 
-        <div class="card-body">  
-          <div class="table"> 
-            <form class="row g-2">
+            <div class="card-body">  
+              <div class="table"> 
+                <form action="{{ route('patient.save') }}" method="post" class="row g-2">
+                  @csrf
+                  <div class="col-md-6">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname">
+                  </div>
 
-              <div class="col-md-6">
-                <label for="lastname" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" name="lastname" id="lastname">
-              </div>
+                  <div class="col-md-6">
+                    <label for="birthday" class="form-label">Birthday</label>
+                    <input type="date" class="form-control" name="birthday" id="birthday">
+                  </div> 
 
-              <div class="col-md-6">
-                <label for="birthday" class="form-label">Birthday</label>
-                  <input type="date" class="form-control" name="birthday" id="birthday">
-              </div> 
+                  <div class="col-md-6">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname">
+                  </div>
 
-              <div class="col-md-6">
-                <label for="firstname" class="form-label">First Name</label>
-                  <input type="text" class="form-control" name="firstname" id="firstname">
-              </div>
+                  <div class="col-md-6">
+                    <label>Department</label>
+                    <select class="form-control" name="department">
+                      <option value="IT">IT</option>
+                      <option value="HR">HR</option> 
+                      <option value="Finance">Finance</option> 
+                    </select>
+                  </div>
 
-              <div class="col-md-6">
-                <label>Department</label>
-                  <select class="form-control" name="department">
-                      <option value="No Role">IT</option>
-                      <option value="No Role">HR</option> 
-                      <option value="No Role">Finance</option> 
-                  </select>
-              </div>
+                  <div class="col-md-6">
+                    <label for="middlename" class="form-label">Middle Name</label>
+                    <input type="text" class="form-control" name="middlename" id="middlename">
+                  </div>
 
-              <div class="col-md-6">
-                <label for="middlename" class="form-label">Middle Name</label>
-                  <input type="text" class="form-control" name="middlename" id="middlename">
-              </div>
-
-              <div class="col-md-6">
-                <label>Gender</label>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="gender">
-                      <label class="form-check-label" for="gender">
+                  <div class="col-md-6">
+                    <label>Gender</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" value="Male" name="gender" id="male">
+                      <label class="form-check-label" for="male">
                         Male
                       </label>
-                  </div>
-              
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" id="gender">
-                  <label class="form-check-label" for="gender">
-                    Female
-                  </label>
-              </div>
-
-              
-     
-          </div>
-        </form>
-      </div>
-    </div> 
-  </div>
-
-  <div class="section-body">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-header d-flex justify-content-start bg-primary">
-            <div>
-              <h5 class = "ml-5 mb-0 text-white">Medical History</h5>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" value="Female" name="gender" id="female">
+                      <label class="form-check-label" for="female">
+                        Female
+                      </label>
+                    </div>
+                  </div>         
+                </div>
+              </div> 
             </div>
-          </div>
-        <div class="card-body">
-          <div class="table"> 
-            <form class="row g-2">
-              <ul>
-               <div class="mx-auto" style="width: 200px;">   
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Diabetes
-                    </label>
-                </div>
-                  
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Heart Disease
-                    </label>
-                </div>
-                  
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Allergy
-                    </label>
-                </div>
-                    
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                       Measles
-                      </label>
-                </div>
-                    
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Asthma
-                      </label>
-                </div>   
-              </div>
-            </ul>
-                 
-            <ul>
-              <div class="mx-auto" style="width: 200px;">  
-               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
-                   Hepatitis
-                  </label>
-              </div>
-                  
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
-                   Seizures
-                  </label>
-              </div>
-                  
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Scoliosis
-                    </label>
-                </div>
-                    
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Primary Pulmonary Infection
-                      </label>
-                </div>
-                    
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Otitis External/Media
-                      </label>
-                </div>   
-              </div>
-            </ul>
 
-            <ul>
-              <div class="mx-auto" style="width: 200px;">    
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Urinary Track Infection
-                    </label>
-                </div>
+          <div class="section-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header d-flex justify-content-start bg-primary">
+                    <div>
+                      <h5 class = "ml-5 mb-0 text-white">Medical History</h5>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table"> 
+                      <div class="row g-2">
+                        <ul>
+                          <div class="mx-auto" style="width: 200px;">
+
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDiabetes">
+                              <label class="form-check-label" for="flexCheckDiabetes">
+                                Diabetes
+                              </label>
+                            </div>
+                    
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckHD">
+                              <label class="form-check-label" for="flexCheckHD">
+                                Heart Disease
+                              </label>
+                            </div>
+                    
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckAllergy">
+                              <label class="form-check-label" for="flexCheckAllergy">
+                                Allergy
+                              </label>
+                            </div>
+                      
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckMeasles">
+                              <label class="form-check-label" for="flexCheckMeasles">
+                                Measles
+                              </label>
+                            </div>
+                      
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckAsthma">
+                              <label class="form-check-label" for="flexCheckAsthma">
+                                Asthma
+                              </label>
+                            </div>
+                          </div>
+                        </ul>
+                        
+                        <ul>
+                          <div class="mx-auto" style="width: 200px;">  
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckHepatitis">
+                              <label class="form-check-label" for="flexCheckHepatitis">
+                                Hepatitis
+                              </label>
+                            </div>
+                  
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckSeizures">
+                              <label class="form-check-label" for="flexCheckSeizures">
+                                Seizures
+                              </label>
+                            </div>
+                  
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckScoliosis">
+                              <label class="form-check-label" for="flexCheckScoliosis">
+                                Scoliosis
+                              </label>
+                            </div>
+                    
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckPPI">
+                              <label class="form-check-label" for="flexCheckPPI">
+                                Primary Pulmonary Infection
+                              </label>
+                            </div>
+                    
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckOE">
+                              <label class="form-check-label" for="flexCheckOE">
+                                Otitis External/Media
+                              </label>
+                            </div>   
+                          </div>
+                        </ul>
+
+                        <ul>
+                          <div class="mx-auto" style="width: 200px;">    
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckUTI">
+                              <label class="form-check-label" for="flexCheckUTI">
+                                Urinary Track Infection
+                              </label>
+                            </div>
                   
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckMumps">
+                  <label class="form-check-label" for="flexCheckMumps">
                    Mumps
                   </label>
               </div>
                   
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChicken">
+                    <label class="form-check-label" for="flexCheckChicken">
                       Chicken Pox
                     </label>
                 </div>
                     
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckThypoid">
+                      <label class="form-check-label" for="flexCheckThypoid">
                         Thypoid
                       </label>
                 </div>
                     
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckNose">
+                      <label class="form-check-label" for="flexCheckNose">
                         Nose Bleeding
                       </label>
                 </div>   
               </div>
             </ul>
-          </form>
-
+          
+            
           <div class="modal-footer text-right">
             <div class="container d-flex justify-content-end">
-              <button type="submit" class="btn btn-icon icon-left btn-primary mr-5"><i
-                class="far fa-save"></i> Save</button>
-                  <button type="button" class="btn btn-icon icon-left btn-danger mr-5"
-                    data-dismiss="modal"><i class="fas fa-ban"></i>Cancel</button>
+              
+                <button type="submit" class="btn btn-icon icon-left btn-primary mr-5"><i class="far fa-save"></i>
+                Save
+                </button>
+              </form>
+              
+              <button type="button" class="btn btn-icon icon-left btn-danger mr-5" data-dismiss="modal"><i class="fas fa-ban"></i>Cancel</button>
             </div>
           </div>
           

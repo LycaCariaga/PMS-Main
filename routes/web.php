@@ -47,11 +47,13 @@ Route::group(['prefix' => 'permission','middleware' => 'auth'], function(){
 });
 
 //patient module
- 
-Route::get('/patient/index', [App\Http\Controllers\PatientController::class, 'index'])->name('patient.index');
-Route::get('/patient/create', [App\Http\Controllers\PatientController::class, 'create'])->name('patient.create');
-Route::get('/patient/initial', [App\Http\Controllers\PatientController::class, 'initial'])->name('patient.initial');
 
+Route::group(['prefix' => 'patient','middleware' => 'auth'], function(){
+  Route::get('/index', [App\Http\Controllers\PatientController::class, 'index'])->name('patient.index');
+  Route::get('/create', [App\Http\Controllers\PatientController::class, 'create'])->name('patient.create');
+  Route::post('/save', [App\Http\Controllers\PatientController::class, 'save'])->name('patient.save');
+  Route::get('/initial', [App\Http\Controllers\PatientController::class, 'initial'])->name('patient.initial');
+});
 
 
 
