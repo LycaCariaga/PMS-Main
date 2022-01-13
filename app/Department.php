@@ -10,7 +10,7 @@ class Department extends Model
     public $timestamps = false;
     public $guarded =[];
   
-    public function students()
+    public function patients()
     {
       return $this->hasMany(Patient::class);
     }

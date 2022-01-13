@@ -38,9 +38,9 @@
                   <div class="col-md-6">
                     <label>Department</label>
                     <select class="form-control" name="department">
-                      <option value="IT">IT</option>
-                      <option value="HR">HR</option> 
-                      <option value="Finance">Finance</option> 
+                      @foreach ($patients as $patient)
+                        <option value = "{{$patient->department->department}}">{{$patient->department->department}}</option>
+                      @endforeach
                     </select>
                   </div>
 
