@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Patient;
+use App\Department;
 
 class PatientController extends Controller
 {
@@ -11,13 +12,12 @@ class PatientController extends Controller
    public function index()
    {
       $patients = Patient::with('department')->get();
-      dd($patients);
       return view('patient.index', compact('patients'));
    }
    public function create()
-   {
-      
-      return view('patient.create');
+   {  
+      $departments = Department::all();
+      return view('patient.create', compact('departments'));
    }
 
    public function save(Request $request)

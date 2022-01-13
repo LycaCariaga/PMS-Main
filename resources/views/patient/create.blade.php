@@ -38,11 +38,11 @@
                   <div class="col-md-6">
                     <label>Department</label>
                     <select class="form-control" name="department">
-                      @foreach ($patients as $patient)
-                        <option value = "{{$patient->department->department}}">{{$patient->department->department}}</option>
+                      @foreach ($departments as $department)
+                        <option value = "{{$department->id}}">{{$department->department}}</option>
                       @endforeach
                     </select>
-                  </div>
+                  </div> 
 
                   <div class="col-md-6">
                     <label for="middlename" class="form-label">Middle Name</label>

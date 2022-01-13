@@ -45,10 +45,10 @@
                                         <tr>
                                             <td>{{$patient->id}}</td>
                                             <td>{{ $patient->first_name }} {{ $patient->middle_name }} {{ $patient->last_name }}</td>
-                                            <td>{{ $patient->admitted_at }}</td>
+                                            <td>{{ $patient->created_at }}</td>
                                             <td>{{ $patient->gender }}</td>
                                             <td>{{ $patient->birthday }}</td>
-                                            <td>{{ $patient->department->department_name}}</td>
+                                            <td>{{ $patient->department->department}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

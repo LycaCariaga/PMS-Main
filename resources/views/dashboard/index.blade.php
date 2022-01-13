@@ -33,7 +33,7 @@
                     <h4>Patients</h4>
                   </div>
                   <div class="card-body">
-                    42
+                  {{$patients}}
                   </div>
                 </div>
               </div>
