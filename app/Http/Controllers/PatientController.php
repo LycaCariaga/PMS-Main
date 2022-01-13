@@ -10,8 +10,8 @@ class PatientController extends Controller
    //patient controller
    public function index()
    {
-      //return view('patient.index');
-      return view('patient.index');
+      $patients = Patient::with('department')->get();
+      return view('patient.index', compact('patients'));
    }
    public function create()
    {

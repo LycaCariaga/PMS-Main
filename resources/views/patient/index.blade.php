@@ -41,14 +41,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($patients as $patient)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Lyca Cariaga</td>
-                                            <td>12/11/21</td>
-                                            <td>Female</td>
-                                            <td>08/22/99</td>
-                                            <td>IT</td>
+                                            <td>{{$patient->id}}</td>
+                                            <td>{{ $patient->first_name }} {{ $patient->middle_name }} {{ $patient->last_name }}</td>
+                                            <td>{{ $patient->admitted_at }}</td>
+                                            <td>{{ $patient->gender }}</td>
+                                            <td>{{ $patient->birthday }}</td>
+                                            <td>{{ $patient->department->department_name}}</td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
