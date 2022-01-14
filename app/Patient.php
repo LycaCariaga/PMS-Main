@@ -14,6 +14,16 @@ class Patient extends Model
     {
         return $this->belongsTo(Department::class);
     }
+
+   public function setHistoryAttribute($value)
+    {
+  $this->attributes['history'] = json_encode($value);
+       }
+
+     public function getHistoryAttribute($value)
+     {
+         return $this->attributes['history'] = json_decode($value);
+    }
 }
 
 

@@ -22,17 +22,26 @@ class PatientController extends Controller
 
    public function save(Request $request)
    {
+   // Patient::create(
+   //        $request->all());
+       $input = $request->all();
+      $input['history'] = $request->input('history');
+       Patient::create($input);
       
-      $patient = new Patient;
-      $patient->lastname = $request->lastname;
-      $patient->firstname = $request->firstname;
-      $patient->middlename = $request->middlename;
-      $patient->birthday = $request->birthday;
-      $patient->department = $request->department;
-      $patient->gender = $request->gender;
-      $patient->save();
+      return redirect()->route('patient.index');
+      // $patient = new Patient;
+      // $patient->last_name = $request->last_name;
+      // $patient->first_name = $request->first_name;
+      // $patient->middle_name = $request->middle_name;
+      // $patient->birthday = $request->birthday;
+      // $patient->department_id = $request->department_id;
+      // $patient->gender = $request->gender;
+      // $patient->save();
+      
+      
+      
 
-      return view('patient.index');
+      // return view('patient.index');
    }
 
    public function initial()

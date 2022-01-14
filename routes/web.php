@@ -49,6 +49,7 @@ Route::group(['prefix' => 'permission','middleware' => 'auth'], function(){
 //patient module
 
 Route::group(['prefix' => 'patient','middleware' => 'auth'], function(){
+ 
   Route::get('/index', [App\Http\Controllers\PatientController::class, 'index'])->name('patient.index');
   Route::get('/create', [App\Http\Controllers\PatientController::class, 'create'])->name('patient.create');
   Route::post('/save', [App\Http\Controllers\PatientController::class, 'save'])->name('patient.save');
