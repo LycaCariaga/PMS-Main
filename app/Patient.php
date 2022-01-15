@@ -22,7 +22,7 @@ class Patient extends Model
 
      public function getHistoryAttribute($value)
      {
-         return $this->attributes['history'] = json_decode($value);
+         return $this->attributes['history[]'] = json_decode($value);
     }
 }
 
