@@ -20,6 +20,11 @@ class PatientController extends Controller
       return view('patient.create', compact('departments'));
    }
 
+   public function view()
+   {
+      return view('patient.view');
+   }
+
    public function save(Request $request)
    {
    // Patient::create(

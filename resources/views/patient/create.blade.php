@@ -15,7 +15,6 @@
                 <h5 class = "ml-5 mb-0 text-white">Basic Information</h5>
               </div>
             </div>
-
             <div class="card-body">  
               <div class="table"> 
                 <form action="{{ route('patient.save') }}" method="post" class="row g-2">
