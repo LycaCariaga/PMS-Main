@@ -56,12 +56,11 @@
                         <a class="nav-link " href="#3a" data-toggle="tab">Treatment</a>
                       </li>
                     </ul>
-  
+
                     <div class="tab-content clearfix">
                       <div class="tab-pane active" id="1a">
                         <div class="row">
                           <div class="col-md-12">
-                            <hr>
                             <h6 class="bg-primary text-white p-2">Medical History</h6>
                             <form class="row g-2">
                               <div class="card-body">
@@ -69,35 +68,35 @@
                                   <div class="row g-2">
                                     <ul>
                                       <div class="mx-auto" style="width: 200px;">
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDiabetes">
                                           <label class="form-check-label" for="flexCheckDiabetes">
                                             Diabetes
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckHD">
                                           <label class="form-check-label" for="flexCheckHD">
                                             Heart Disease
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckAllergy">
                                           <label class="form-check-label" for="flexCheckAllergy">
                                             Allergy
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckMeasles">
                                           <label class="form-check-label" for="flexCheckMeasles">
                                             Measles
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckAsthma">
                                           <label class="form-check-label" for="flexCheckAsthma">
@@ -106,37 +105,39 @@
                                         </div>
                                       </div>
                                     </ul>
-  
+
                                     <ul>
                                       <div class="mx-auto" style="width: 200px;">
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="" id="flexCheckHepatitis">
+                                          <input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckHepatitis">
                                           <label class="form-check-label" for="flexCheckHepatitis">
                                             Hepatitis
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckSeizures">
                                           <label class="form-check-label" for="flexCheckSeizures">
                                             Seizures
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" value="" id="flexCheckScoliosis">
+                                          <input class="form-check-input" type="checkbox" value=""
+                                            id="flexCheckScoliosis">
                                           <label class="form-check-label" for="flexCheckScoliosis">
                                             Scoliosis
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckPPI">
                                           <label class="form-check-label" for="flexCheckPPI">
                                             Primary Pulmonary Infection
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckOE">
                                           <label class="form-check-label" for="flexCheckOE">
@@ -145,7 +146,7 @@
                                         </div>
                                       </div>
                                     </ul>
-  
+
                                     <ul>
                                       <div class="mx-auto" style="width: 200px;">
                                         <div class="form-check">
@@ -154,28 +155,28 @@
                                             Urinary Track Infection
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckMumps">
                                           <label class="form-check-label" for="flexCheckMumps">
                                             Mumps
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckChicken">
                                           <label class="form-check-label" for="flexCheckChicken">
                                             Chicken Pox
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckThypoid">
                                           <label class="form-check-label" for="flexCheckThypoid">
                                             Thypoid
                                           </label>
                                         </div>
-  
+
                                         <div class="form-check">
                                           <input class="form-check-input" type="checkbox" value="" id="flexCheckNose">
                                           <label class="form-check-label" for="flexCheckNose">
@@ -189,7 +190,7 @@
                               </div>
                             </form>
                           </div>
-  
+
                           <div class="col-md-12">
                             <hr>
                             <h6 class="bg-primary text-white p-2">Vital Signs</h6>
@@ -222,7 +223,7 @@
                               </div>
                             </form>
                           </div>
-  
+
                           <div class="col-md-12">
                             <br>
                             <h6 class="bg-primary text-white p-2">Complaints</h6>
@@ -234,7 +235,7 @@
                                     Toothache
                                   </label>
                                 </div>
-  
+
                                 <div class="form-check ">
                                   <input class="form-check-input" type="radio" name="flexRadio" id="flexRadioLGF">
                                   <label class="form-check-label" for="flexRadioLGF">
@@ -248,7 +249,7 @@
                                   </label>
                                 </div>
                               </div>
-  
+
                               <div class="col-md-2">
                                 <div class="form-check">
                                   <input class="form-check-input" type="radio" name="flexRadio" id="flexRadioLBM">
@@ -269,7 +270,7 @@
                                   </label>
                                 </div>
                               </div>
-  
+
                               <div class="col-md-5">
                                 <div class="form-check">
                                   <input class="form-check-input" type="radio" name="flexRadio" id="flexRadioOthers">
@@ -278,7 +279,8 @@
                                   </label>
                                 </div>
                                 <div class>
-                                  <textarea class="form-control" id="others" rows="3" placeholder="Others..."></textarea>
+                                  <textarea class="form-control" id="others" rows="3"
+                                    placeholder="Others..."></textarea>
                                 </div>
                                 <div class>
                                   <label>Select a Doctor</label>
@@ -289,7 +291,7 @@
                                   </select>
                                 </div>
                               </div>
-  
+
                               <div class="col-md-3">
                                 <div class>
                                   <div class="modal-footer text-right">
@@ -337,7 +339,7 @@
                                 <div class="col-md-12">
                                   <label for="symptoms">Key Symptoms</label>
                                   <textarea class="form-control" id="symptoms" rows="10"></textarea>
-  
+
                                 </div>
                                 <div class="col-md-12">
                                   <hr>
@@ -476,7 +478,7 @@
                           </div>
                         </div>
                       </div>
-  
+
                       <div class="tab-pane" id="3a">
                         <div class="row">
                           <div class="table col-md-12">
@@ -548,5 +550,7 @@
       </div>
     </div>
   </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 @endsection
