@@ -62,8 +62,12 @@
                         </td>
                         <td>
                           <div class="d-flex justify-content-center">
-                            <a class="btn btn-icon icon-left btn-primary mr-3" href="{{ route('patient.view') }}"
-                              role="button"><i class="fas fa-eye"></i></a>
+                            <form action="{{ route('patient.view', $patient->id) }}" method="get">
+                              @csrf
+                              <button type="submit"
+                                  class="btn btn-icon icon-left btn-primary mr-3"><i class="fas fa-eye"></i>
+                              </button>
+                            </form>
                             <button type="submit" class="btn btn-icon icon-left btn-danger mr-3"><i
                                 class="fas fa-trash"></i>
                             </button>

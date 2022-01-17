@@ -20,9 +20,10 @@ class PatientController extends Controller
       return view('patient.create', compact('departments'));
    }
 
-   public function view()
+   public function view($id)
    {
-      return view('patient.view');
+      $patients = Patient::findorfail($id); 
+      return view('patient.view', compact('patients'));
    }
 
    public function save(Request $request)
