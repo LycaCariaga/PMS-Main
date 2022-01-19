@@ -23,9 +23,9 @@ class PatientController extends Controller
    public function save(Request $request)
    {
  
-       $input = $request->all();
+      $input = $request->all();
       $input['history'] = $request->input('history'); 
-       Patient::create($input);
+      Patient::create($input);
       
       return redirect()->route('patient.index');
       
@@ -45,6 +45,8 @@ class PatientController extends Controller
 
    public function edit(Request $request){
       $patient = Patient::find($request->id);
+
+      // $history = History::all();
      
      
      return view('patient.edit', compact('patient'));

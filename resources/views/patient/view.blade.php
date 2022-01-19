@@ -3,7 +3,7 @@
 @section('content')
 
   <section class="section">
-    
+
     <div class="section-header">
       <h3 class="page__heading">Patient Management</h3>
     </div>
@@ -16,8 +16,8 @@
         </a>
         <span class="pr-5"></span>
       </div>
-      <div class="row"> 
-        <div class="col-sm-3"> 
+      <div class="row">
+        <div class="col-sm-3">
           <div class="card shadow mb-3">
             <!-- Card Header - Dropdown -->
             <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
@@ -29,7 +29,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink"
                   style="">
-                  <a class="dropdown-item text-primary" href="{{ route('patient.edit', ['id'=> $patients->id]) }}">Edit</a>
+                  <a class="dropdown-item text-primary"
+                    href="{{ route('patient.edit', ['id' => $patients->id]) }}">Edit</a>
                   <a class="dropdown-item text-danger" href="#">Delete</a>
                 </div>
               </div>
@@ -37,21 +38,22 @@
             <!-- Card Body -->
             <div class="card-body ">
               <div class="text-center">
-            
-              <img src="{{asset('img/avata.png')}}" class="img-fluid" style="max-width:50%" alt="">
+
+                <img src="{{ asset('img/avata.png') }}" class="img-fluid" style="max-width:50%" alt="">
               </div>
-              
+
               <hr>
-              <h4 class="text-primary text-center">{{ $patients->first_name }} {{ $patients->middle_name }} {{ $patients->last_name }} </h4>
-              <h6>AGE: {{ $patients->getAge() }}
+              <h4 class="text-primary text-center">{{ $patients->first_name }} {{ $patients->middle_name }}
+                {{ $patients->last_name }} </h4>
+              <h6>AGE: {{ $patients->getAge() }}</h6>
               <h6>DATE OF BIRTH: {{ $patients->birthday }}</h6>
               <h6>DEPARTMENT: {{ $patients->department->department }}</h6>
-              <h6> MEDICAL HISTORY</h6> 
-               <h6>
+              <h6> MEDICAL HISTORY</h6>
+              <h6>
                 @foreach ((array) $patients->history as $value)
-                {{ $value }} |
+                  {{ $value }} |
                 @endforeach
-                
+
               </h6>
             </div>
           </div>
@@ -72,7 +74,7 @@
               </div>
             </div>
             <!-- Card Body -->
-            <div class="card-body "> 
+            <div class="card-body ">
               <div class="table-responsive">
                 <table class="table table-bordered" id="table">
                   <thead>
@@ -83,40 +85,40 @@
                   </thead>
                   <tbody>
                     <tr>
-                    <td>2022-01-14 17:51:21</td>
-                    <td>
-                    <div class="d-flex justify-content-center"> 
-                    <form action="" method="get">
-                      <button type="submit"
-                          class="btn btn-icon icon-left btn-primary mr-3"><i class="fas fa-eye"></i>
-                      </button>
-                    </form>
-                    <button type="submit"
-                          class="btn btn-icon icon-left btn-danger mr-3"><i class="fas fa-trash"></i>
-                      </button>
-                    </div>
-                    </td>
+                      <td>2022-01-14 17:51:21</td>
+                      <td>
+                        <div class="d-flex justify-content-center">
+                          <form action="" method="get">
+                            <button type="submit" class="btn btn-icon icon-left btn-primary mr-3"><i
+                                class="fas fa-eye"></i>
+                            </button>
+                          </form>
+                          <button type="submit" class="btn btn-icon icon-left btn-danger mr-3"><i
+                              class="fas fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
                     </tr>
 
                     <tr>
-                    <td>2022-01-23 17:13:21</td>
-                    <td>
-                    <div class="d-flex justify-content-center"> 
-                    <form action="" method="get">
-                      <button type="submit"
-                          class="btn btn-icon icon-left btn-primary mr-3"><i class="fas fa-eye"></i>
-                      </button>
-                    </form>
-                    <button type="submit"
-                          class="btn btn-icon icon-left btn-danger mr-3"><i class="fas fa-trash"></i>
-                      </button>
-                    </div>
-                    </td>
+                      <td>2022-01-23 17:13:21</td>
+                      <td>
+                        <div class="d-flex justify-content-center">
+                          <form action="" method="get">
+                            <button type="submit" class="btn btn-icon icon-left btn-primary mr-3"><i
+                                class="fas fa-eye"></i>
+                            </button>
+                          </form>
+                          <button type="submit" class="btn btn-icon icon-left btn-danger mr-3"><i
+                              class="fas fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-             
+
             </div>
           </div>
 
@@ -233,8 +235,7 @@
                                 </label>
                               </div>
                               <div class>
-                                <textarea class="form-control" id="others" rows="3"
-                                  placeholder="Others..."></textarea>
+                                <textarea class="form-control" id="others" rows="3" placeholder="Others..."></textarea>
                               </div>
                               <div class>
                                 <label>Select a Doctor</label>
@@ -248,25 +249,25 @@
 
                             <div class="col-md-3">
                               <!-- <div class>
-                                <div class="modal-footer text-right">
-                                  <div class="container d-flex justify-content-start">
-                                    <button type="submit" class="btn btn-icon icon-right btn-primary mr-5"><i
-                                        class="fas fa-arrow-right"></i> Add to
-                                      Doctor</button>
-                                  </div>
-                                </div>
-                              </div> -->
+                                      <div class="modal-footer text-right">
+                                        <div class="container d-flex justify-content-start">
+                                          <button type="submit" class="btn btn-icon icon-right btn-primary mr-5"><i
+                                              class="fas fa-arrow-right"></i> Add to
+                                            Doctor</button>
+                                        </div>
+                                      </div>
+                                    </div> -->
                               <!-- <div class>
-                                <div class="modal-footer text-right">
-                                  <div class="container d-flex justify-content-start">
-                                    <a class="nav-link" href="#2a" data-toggle="tab">
-                                      <button type="button" class="btn btn-icon icon-right btn-primary mr-5"><i
-                                          class="fas fa-arrow-right"></i>
-                                        Diagnosis</button>
-                                    </a>
-                                  </div>
-                                </div>
-                              </div> -->
+                                      <div class="modal-footer text-right">
+                                        <div class="container d-flex justify-content-start">
+                                          <a class="nav-link" href="#2a" data-toggle="tab">
+                                            <button type="button" class="btn btn-icon icon-right btn-primary mr-5"><i
+                                                class="fas fa-arrow-right"></i>
+                                              Diagnosis</button>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div> -->
                             </div>
                           </form>
                           <hr>
@@ -503,7 +504,7 @@
       </div>
     </div>
   </section>
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
