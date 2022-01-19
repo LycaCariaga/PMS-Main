@@ -20,39 +20,40 @@ class PatientController extends Controller
       return view('patient.create', compact('departments'));
    }
 
+   public function save(Request $request)
+   {
+ 
+       $input = $request->all();
+      $input['history'] = $request->input('history'); 
+       Patient::create($input);
+      
+      return redirect()->route('patient.index');
+      
+   }
+
    public function view($id)
    {
       $patients = Patient::findorfail($id); 
       return view('patient.view', compact('patients'));
    }
 
-   public function save(Request $request)
-   {
-   // Patient::create(
-   //        $request->all());
-       $input = $request->all();
-      $input['history'] = $request->input('history');
-       Patient::create($input);
-      
-      return redirect()->route('patient.index');
-      // $patient = new Patient;
-      // $patient->last_name = $request->last_name;
-      // $patient->first_name = $request->first_name;
-      // $patient->middle_name = $request->middle_name;
-      // $patient->birthday = $request->birthday;
-      // $patient->department_id = $request->department_id;
-      // $patient->gender = $request->gender;
-      // $patient->save();
-      
-      
-      
-
-      // return view('patient.index');
-   }
-
    public function initial()
    {
       
       return view('patient.initial');
+   }
+
+   public function edit(Request $request){
+      $patient = Patient::find($request->id);
+     
+     
+     return view('patient.edit', compact('patient'));
+      // return redirect()->route('patient.index');
+       
+   }
+   public function update(Request $request){
+      $patient = Patient::find($request->id)->update($request->all());
+   
+      return redirect()->route('patient.index');
    }
 }

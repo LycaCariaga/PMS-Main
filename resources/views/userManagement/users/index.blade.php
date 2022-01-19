@@ -99,7 +99,7 @@
 
                 <div class="modal-body">
                     <form method="GET" id="update" >
-         
+                  
                         @csrf
                         <div class="card-body">
                             <div class="row d-flex justify-content-center">

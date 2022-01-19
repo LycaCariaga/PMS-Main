@@ -25,40 +25,34 @@
             </div>
             <div class="card-body">  
               <div class="table"> 
-                <form action="{{ route('patient.save') }}" method="post" class="row g-2">
+                <form action="{{ route('patient.update') }}" method="POST" class="row g-2">
+                <input type="hidden" name="id" value="{{$patient->id}}">
                   @csrf
                   <div class="col-md-6">
                     <label for="lastname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" name="last_name" id="last_name">
+                    <input type="text" class="form-control" name="last_name" id="last_name" value="{{$patient->last_name}}">
                   </div>
 
                   <div class="col-md-6">
                     <label for="birthday" class="form-label">Birthday</label>
-                    <input type="date" class="form-control" name="birthday" id="birthday">
+                    <input type="date" class="form-control" name="birthday" id="birthday" value="{{$patient->birthday}}">
                   </div> 
 
                   <div class="col-md-6">
                     <label for="firstname" class="form-label">First Name</label>
-                    <input type="text" class="form-control" name="first_name" id="first_name">
+                    <input type="text" class="form-control" name="first_name" id="first_name" value="{{$patient->first_name}}">
                   </div>
 
-                  <div class="col-md-6">
-                    <label>Department</label>
-                    <select class="form-control" name="department_id">
-                      @foreach ($departments as $department)
-                        <option value = "{{$department->id}}">{{$department->department}}</option>
-                      @endforeach
-                    </select>
-                  </div> 
+          
 
                   <div class="col-md-6">
                     <label for="middlename" class="form-label">Middle Name</label>
-                    <input type="text" class="form-control" name="middle_name" id="middle_name">
+                    <input type="text" class="form-control" name="middle_name" id="middle_name" value="{{$patient->middle_name}}">
                   </div>
 
                   <div class="col-md-6">
                     <label>Gender</label>
-                    <div class="form-check">
+                    <div class="form-check" value="{{$patient->gender}}">
                       <input class="form-check-input" type="radio" value="Male" name="gender" id="male">
                       <label class="form-check-label" for="male">
                         Male
