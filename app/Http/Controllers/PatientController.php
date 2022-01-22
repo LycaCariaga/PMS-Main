@@ -45,11 +45,13 @@ class PatientController extends Controller
 
    public function edit(Request $request){
       $patient = Patient::find($request->id);
+      $departments = Department::all();
+      // $history = Patient::with('history[]')->get();
+      $request->get('history[]');
+      // $patients = Patient::with('department')->get();
      
-      // $history = History::all();
      
-     
-     return view('patient.edit', compact('patient'));
+     return view('patient.edit', compact('patient', 'departments'));
       // return redirect()->route('patient.index');
        
    }
