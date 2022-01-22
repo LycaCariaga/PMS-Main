@@ -49,6 +49,16 @@
 
 
                   <div class="col-md-6">
+                    <label>Department</label>
+                    <select class="form-control" name="department_id">
+                     <option value="1"{{ $patient->department->department == 'IT' ? 'selected' : ''}}>IT</option>
+                     <option value="2"{{ $patient->department->department == 'Finance' ? 'selected' : ''}}>Finance</option>
+                     <option value="3"{{ $patient->department->department == 'HR' ? 'selected' : ''}}>HR</option>
+                     <option value="4"{{ $patient->department->department == 'Marketing' ? 'selected' : ''}}>Marketing</option>
+                    </select>
+                  </div> 
+
+                  <div class="col-md-6">
                     <label for="middlename" class="form-label">Middle Name</label>
                     <input type="text" class="form-control" name="middle_name" id="middle_name"
                       value="{{ $patient->middle_name }}">
@@ -92,7 +102,8 @@
                             
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Diabetes"
-                                  id="flexCheckDiabetes" >
+                                  id="flexCheckDiabetes" {{ $patient->history == 'Diabetes' ? 'checked' : '' }}>
+                                
                                 <label class="form-check-label" for="flexCheckDiabetes">
                                   Diabetes
                                 </label>
