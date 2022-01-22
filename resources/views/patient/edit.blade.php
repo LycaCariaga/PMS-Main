@@ -101,9 +101,11 @@
                           <div class="mx-auto" style="width: 200px;">
                             
                               <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="history[]" value="Diabetes"
-                                  id="flexCheckDiabetes" {{ $patient->history == 'Diabetes' ? 'checked' : '' }}>
-                                
+                                <input class="form-check-input" type="checkbox" name="history[]"   
+                                  id="flexCheckDiabetes"  
+                                  value="Diabetes" {{ $patient->history == 'Diabetes' ? 'checked' : '' }}  >
+                                 
+                                  
                                 <label class="form-check-label" for="flexCheckDiabetes">
                                   Diabetes
                                 </label>
@@ -111,6 +113,7 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Heart Disease"
+                              
                                   id="flexCheckHD">
                                 <label class="form-check-label" for="flexCheckHD">
                                   Heart Disease
@@ -119,7 +122,8 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Allergy"
-                                  id="flexCheckAllergy">
+                                
+                                  id="flexCheckAllergy" >
                                 <label class="form-check-label" for="flexCheckAllergy">
                                   Allergy
                                 </label>
@@ -127,7 +131,7 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Measles"
-                                  id="flexCheckMeasles">
+                                  id="flexCheckMeasles"  {{ $patient->history == 'Measles' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckMeasles">
                                   Measles
                                 </label>
@@ -135,7 +139,7 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Asthma"
-                                  id="flexCheckAsthma">
+                                  id="flexCheckAsthma"  {{ $patient->history == 'Asthma' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckAsthma">
                                   Asthma
                                 </label>
@@ -147,7 +151,7 @@
                             <div class="mx-auto" style="width: 200px;">
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Hepatitis"
-                                  id="flexCheckHepatitis">
+                                  id="flexCheckHepatitis"  {{ $patient->history == 'Hepatitis' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckHepatitis">
                                   Hepatitis
                                 </label>
@@ -155,7 +159,7 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Seizures"
-                                  id="flexCheckSeizures">
+                                  id="flexCheckSeizures"  {{ $patient->history == 'Seizures' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckSeizures">
                                   Seizures
                                 </label>
@@ -163,7 +167,7 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Scoliosis"
-                                  id="flexCheckScoliosis">
+                                  id="flexCheckScoliosis"  {{ $patient->history == 'Scoliosis' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckScoliosis">
                                   Scoliosis
                                 </label>
@@ -171,14 +175,14 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckPPI">
-                                <label class="form-check-label" for="flexCheckPPI">
+                                <label class="form-check-label" for="flexCheckPPI"  {{ $patient->history == 'Primary Pulmonary Infection' ? 'checked' : '' }}>
                                   Primary Pulmonary Infection
                                 </label>
                               </div>
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]"
-                                  value="Otitis External/Media" id="flexCheckOE">
+                                  value="Otitis External/Media" id="flexCheckOE"  {{ $patient->history == 'Otitis External/Media' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckOE">
                                   Otitis External/Media
                                 </label>
@@ -190,7 +194,7 @@
                             <div class="mx-auto" style="width: 200px;">
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]"
-                                  value="Urinary Track Infection" id="flexCheckUTI">
+                                  value="Urinary Track Infection" id="flexCheckUTI"  {{ $patient->history == 'Urinary Track Infection' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckUTI">
                                   Urinary Track Infection
                                 </label>
@@ -198,7 +202,7 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Mumps"
-                                  id="flexCheckMumps">
+                                  id="flexCheckMumps"  {{ $patient->history == 'Mumps' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckMumps">
                                   Mumps
                                 </label>
@@ -206,7 +210,7 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Chicken Pox"
-                                  id="flexCheckChicken">
+                                  id="flexCheckChicken"  {{ $patient->history == 'Chicken Pox' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckChicken">
                                   Chicken Pox
                                 </label>
@@ -214,7 +218,7 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Thypoid"
-                                  id="flexCheckThypoid">
+                                  id="flexCheckThypoid"  {{ $patient->history == 'Thypoid' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckThypoid">
                                   Thypoid
                                 </label>
@@ -222,7 +226,7 @@
 
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="history[]" value="Nose Bleeding"
-                                  id="flexCheckNose">
+                                  id="flexCheckNose"  {{ $patient->history == 'Nose Bleeding' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="flexCheckNose">
                                   Nose Bleeding
                                 </label>
