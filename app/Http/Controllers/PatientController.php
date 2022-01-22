@@ -45,11 +45,11 @@ class PatientController extends Controller
 
    public function edit(Request $request){
       $patient = Patient::find($request->id);
-      $department= Department::find($request->id);
+     
       // $history = History::all();
      
      
-     return view('patient.edit', compact('patient','department'));
+     return view('patient.edit', compact('patient'));
       // return redirect()->route('patient.index');
        
    }
@@ -58,4 +58,12 @@ class PatientController extends Controller
    
       return redirect()->route('patient.index');
    }
+
+   public function delete($id){
+        
+      $patient = Patient::findorfail($id);
+      $patient->delete();
+
+      return redirect()->route('patient.index');
+  }
 }

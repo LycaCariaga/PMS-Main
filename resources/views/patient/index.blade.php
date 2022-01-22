@@ -68,9 +68,13 @@
                                   class="btn btn-icon icon-left btn-primary mr-3"><i class="fas fa-eye"></i>
                               </button>
                             </form>
+                           <form action="{{ route('patient.delete', $patient->id) }}" method="post">
+                              @csrf
                             <button type="submit" class="btn btn-icon icon-left btn-danger mr-3"><i
                                 class="fas fa-trash"></i>
                             </button>
+                            </form>
+                           
                           </div>
                         </td>
                       </tr>

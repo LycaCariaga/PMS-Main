@@ -57,7 +57,7 @@ Route::group(['prefix' => 'patient','middleware' => 'auth'], function(){
   Route::get('/edit/{id}', [App\Http\Controllers\PatientController::class, 'edit'])->name('patient.edit');
   Route::post('/update', [App\Http\Controllers\PatientController::class, 'update'])->name('patient.update');
   Route::get('/view/{id}', [App\Http\Controllers\PatientController::class, 'view'])->name('patient.view');
-  Route::get('/delete', [App\Http\Controllers\PatientController::class, 'delete'])->name('patient.delete');
+  Route::post('/delete/{id}', [App\Http\Controllers\PatientController::class, 'delete'])->name('patient.delete');
   Route::get('/initial', [App\Http\Controllers\PatientController::class, 'initial'])->name('patient.initial');
 });
 
