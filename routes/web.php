@@ -55,7 +55,7 @@ Route::group(['prefix' => 'patient','middleware' => 'auth'], function(){
   Route::post('/update', [App\Http\Controllers\PatientController::class, 'update'])->name('patient.update');
   Route::get('/view/{id}', [App\Http\Controllers\PatientController::class, 'view'])->name('patient.view');
   Route::post('/delete/{id}', [App\Http\Controllers\PatientController::class, 'delete'])->name('patient.delete');
-  Route::get('/initial', [App\Http\Controllers\PatientController::class, 'initial'])->name('patient.initial');
+ 
 });
 
 
@@ -63,6 +63,12 @@ Route::group(['prefix' => 'department','middleware' => 'auth'], function(){
   Route::get('/index', [App\Http\Controllers\DepartmentController::class, 'index'])->name('department.index');
   Route::post('/Store', [App\Http\Controllers\DepartmentController::class, 'store'])->name('department.store');
   Route::delete('/delete/{id}', [App\Http\Controllers\DepartmentController::class, 'delete'])->name('department.delete');
+});
+
+Route::group(['prefix' => 'consultation','middleware' => 'auth'], function(){
+  Route::get('/index', [App\Http\Controllers\ConsultationController::class, 'index'])->name('consultation.index');
+  Route::get('/create', [App\Http\Controllers\ConsultationController::class, 'create'])->name('consultation.create');
+  Route::post('/store', [App\Http\Controllers\ConsultationController::class, 'store'])->name('consultation.store');
 });
 Auth::routes();
 

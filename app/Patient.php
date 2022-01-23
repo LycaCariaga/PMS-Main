@@ -5,7 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use App\Department;
-
+use App\Consultation;
 class Patient extends Model
 {
     protected $table = 'patients';
@@ -18,6 +18,11 @@ class Patient extends Model
     public function department()
     {
         return $this->belongsTo(Department::class);
+    }
+
+    public function consultations()
+    {
+      return $this->hasMany(Consultation::class);
     }
 
     public function setHistoryAttribute($value)

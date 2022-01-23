@@ -37,11 +37,7 @@ class PatientController extends Controller
       return view('patient.view', compact('patients'));
    }
 
-   public function initial()
-   {
-      
-      return view('patient.initial');
-   }
+  
 
    public function edit(Request $request){
       $patient = Patient::find($request->id);
