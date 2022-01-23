@@ -37,6 +37,7 @@
                       <th class="text-primary">Gender</th>
                       <th class="text-primary text-center">B-Day</th>
                       <th class="text-primary text-center">Department</th>
+                      
                       <th class="text-primary text-center">Medical History</th>
                       <th class="text-primary text-center">Action</th>
                     </tr>
@@ -50,6 +51,7 @@
                         <td>{{ $patient->gender }}</td>
                         <td>{{ $patient->birthday }}</td>
                         <td>{{ $patient->department->department }}</td>
+                       
                         <td>
                           {{-- {{ print_r($patient->history) }} --}}
                           {{-- @foreach ($patient->history as $value)

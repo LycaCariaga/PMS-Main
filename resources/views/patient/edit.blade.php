@@ -51,12 +51,12 @@
                   <div class="col-md-6">
                     <label>Department</label>
                     <select class="form-control" name="department_id">
-                     <option value="1"{{ $patient->department->department == 'IT' ? 'selected' : ''}}>IT</option>
-                     <option value="2"{{ $patient->department->department == 'Finance' ? 'selected' : ''}}>Finance</option>
-                     <option value="3"{{ $patient->department->department == 'HR' ? 'selected' : ''}}>HR</option>
-                     <option value="4"{{ $patient->department->department == 'Marketing' ? 'selected' : ''}}>Marketing</option>
+                      <option value = {{$patient->department->id}} hidden>{{$patient->department->department}}</option>
+                      @foreach ($departments as $department)
+                        <option value = "{{$department->id}}">{{$department->department}}</option>
+                      @endforeach
                     </select>
-                  </div> 
+                  </div>
 
                   <div class="col-md-6">
                     <label for="middlename" class="form-label">Middle Name</label>

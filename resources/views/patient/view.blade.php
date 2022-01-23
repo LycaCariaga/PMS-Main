@@ -31,7 +31,7 @@
                   style="">
                   <a class="dropdown-item text-primary"
                     href="{{ route('patient.edit', ['id' => $patients->id]) }}">Edit</a>
-                  <a class="dropdown-item text-danger" href="#">Delete</a>
+                 <!-- <a class="dropdown-item text-danger" href="{{ route('patient.delete', $patients->id) }}">Delete</a> -->
                 </div>
               </div>
             </div>
@@ -151,6 +151,14 @@
                         <div class="col-md-12">
                           <h6 class="bg-primary text-white p-2">Vital Signs</h6>
                           <form class="row g-2">
+                          <div class="col-md-12">
+                            <label>Patient Name</label>
+                            <select class="form-control" name="name">
+                            
+                        <option >Juan</option>
+                    
+                            </select>
+                          </div> 
                             <div class="col-md-4">
                               <label for="bp" class="form-label">Blood Pressure</label>
                               <input type="text" class="form-control" name="bp" id="bp">

@@ -16,6 +16,7 @@
     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-hospital-user"></i> <span>Patient Management</span></a>
     <ul class="dropdown-menu" style="display: none;">
     <li><a class="nav-link" href="{{route('patient.index')}}">Patient List</a></li>
+    <li><a class="nav-link" href="{{route('department.index')}}">Departments</a></li>
     <li><a class="nav-link" href="{{route('patient.create')}}">Add Patient</a></li>
     <!-- <li><a class="nav-link" href="{{route('patient.initial')}}">Assessment</a></li> -->
     </ul>

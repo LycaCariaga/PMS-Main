@@ -27,9 +27,6 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function(){
     Route::get('/index', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
     Route::post('/Store', [App\Http\Controllers\UserController::class, 'store'])->name('user.store');
     Route::delete('/delete/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('user.delete');
-    //edit functionality
-    // Route::get('/edit/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('user.edit');
-    // Route::post('/update/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
     Route::get('/update/{id}', [App\Http\Controllers\UserController::class, 'update']);
     
 });
@@ -62,8 +59,11 @@ Route::group(['prefix' => 'patient','middleware' => 'auth'], function(){
 });
 
 
-
-
+Route::group(['prefix' => 'department','middleware' => 'auth'], function(){
+  Route::get('/index', [App\Http\Controllers\DepartmentController::class, 'index'])->name('department.index');
+  Route::post('/Store', [App\Http\Controllers\DepartmentController::class, 'store'])->name('department.store');
+  Route::delete('/delete/{id}', [App\Http\Controllers\DepartmentController::class, 'delete'])->name('department.delete');
+});
 Auth::routes();
 
 //Route::get('/patient/index', 'PatientController@index')->name('patient.index');

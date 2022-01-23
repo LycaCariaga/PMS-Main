@@ -45,18 +45,16 @@ class PatientController extends Controller
 
    public function edit(Request $request){
       $patient = Patient::find($request->id);
-     
-      // $history = History::all();
-     
-     
-     return view('patient.edit', compact('patient'));
-      // return redirect()->route('patient.index');
-       
+      $departments = Department::all();
+      $request->get('history[]');
+
+     return view('patient.edit', compact('patient','departments')); 
    }
+
    public function update(Request $request){
       $patient = Patient::find($request->id)->update($request->all());
-   
-      return redirect()->route('patient.index');
+    return redirect()->route('patient.index');
+    
    }
 
    public function delete($id){
