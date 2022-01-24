@@ -17,14 +17,14 @@ class ConsultationController extends Controller
     public function create()
     {  
        $patients = Patient::all();
-       return view('patient.view', compact('patients'));
+       return view('consultation.create', compact('patients'));
     }
     public function store(Request $request)
     {
-        Consultation::create(
-        $request->all()
+      Consultation::create(
+      $request->all()
         );
-        return redirect()->route('consultation.index');
+      return redirect()->route('consultation.index');
     }
  
  

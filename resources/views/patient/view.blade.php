@@ -124,12 +124,14 @@
 
         </div>
         <div class="col lg-8">
-          <div class="card shadow mb-4">
-            <!-- Card Header - Dropdown -->
+          
+          @yield('content')
+        @include('consultation.create')
+<!--             
             <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
               <h4 class="m-2 bg-primary font-weight-bold text-white">Add Consultation</h4>
             </div>
-            <!-- Card Body -->
+         
             <div class="card-body">
               <div class="table">
                 <div id="exTab1">
@@ -240,48 +242,9 @@
                               </div>
                             </div>
 
-                            <!-- <div class="col-md-5">
-                              <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadio" id="flexRadioOthers">
-                                <label class="form-check-label" for="flexRadioOthers">
-                                  Others
-                                </label>
-                              </div>
-                              <div class>
-                                <textarea class="form-control" id="others" rows="3" placeholder="Others..."></textarea>
-                              </div>
-                              <div class>
-                                <label>Select a Doctor</label>
-                                <select class="form-control" name="doctors">
-                                  <option value="No Doctor">Dr. Cruz</option>
-                                  <option value="No Doctor">Dr. Sy</option>
-                                  <option value="No Doctor">Dr. Lee</option>
-                                </select>
-                              </div>
-                            </div> -->
+                            
 
-                            <div class="col-md-3">
-                              <!-- <div class>
-                                      <div class="modal-footer text-right">
-                                        <div class="container d-flex justify-content-start">
-                                          <button type="submit" class="btn btn-icon icon-right btn-primary mr-5"><i
-                                              class="fas fa-arrow-right"></i> Add to
-                                            Doctor</button>
-                                        </div>
-                                      </div>
-                                    </div> -->
-                              <!-- <div class>
-                                      <div class="modal-footer text-right">
-                                        <div class="container d-flex justify-content-start">
-                                          <a class="nav-link" href="#2a" data-toggle="tab">
-                                            <button type="button" class="btn btn-icon icon-right btn-primary mr-5"><i
-                                                class="fas fa-arrow-right"></i>
-                                              Diagnosis</button>
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div> -->
-                            </div>
+                            
 
                           </form>
                        
@@ -302,9 +265,9 @@
                                 <hr>
                                 <label for="initial" class="form-label">Initial
                                   Diagnosis</label>
-                                <!-- <input type="text" class="form-control" name="initial" id="initial"> -->
+                               
                               </div>
-                              <!-- table -->
+                              
                               <div class="col-md-12">
                                 <br>
                                 <h6 class="bg-primary text-white p-2">Laboratory Test</h6>
@@ -429,7 +392,7 @@
                                   </div>
                                 </form>
                               </div>
-                              <!-- end table -->
+                              
                             </form>
                           </div>
                         </div>
@@ -499,23 +462,15 @@
                     </div>
                   </div> 
                 </div>
-              </div>
-            </div>
+              </div> -->
+           
           </div>
+
         <div class="row">
-          <div class="col lg-8">
-            <div class="card shadow mb-4">
-              <!-- Card Header -->
-              <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
-                <h4 class="m-2 bg-primary font-weight-bold text-white">View Consultation</h4>
-              </div>
-              <div class="card-body">
-                <div class="table">
-                <h5 class="text-primary">No Consultation</h5>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="col lg-8">
+        @yield('content')
+        @include('consultation.consul')
+        </div>
         </div>
 
       </div>
