@@ -16,6 +16,7 @@ class PatientController extends Controller
       $patients = Patient::with('department')->get();
       return view('patient.index', compact('patients'));
    }
+   
    public function create()
    {  
       $departments = Department::all();
@@ -35,8 +36,10 @@ class PatientController extends Controller
 
    public function view($id)
    {
-      $patients = Patient::findorfail($id); 
-      return view('patient.view', compact('patients'));
+      $patients = Patient::findorfail($id);
+      $consultations = Consultation::with('patient')->get();
+
+      return view('patient.view', compact('patients', 'consultations'));
    }
 
   
@@ -45,11 +48,11 @@ class PatientController extends Controller
       $patient = Patient::find($request->id);
       $departments = Department::all();
       $request->get('history[]');
-
      return view('patient.edit', compact('patient','departments')); 
    }
 
    public function update(Request $request){
+      
       $patient = Patient::find($request->id)->update($request->all());
     return redirect()->route('patient.index');
     
