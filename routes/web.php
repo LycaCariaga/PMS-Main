@@ -67,7 +67,7 @@ Route::group(['prefix' => 'department','middleware' => 'auth'], function(){
 
 Route::group(['prefix' => 'consultation','middleware' => 'auth'], function(){
   Route::get('/index', [App\Http\Controllers\ConsultationController::class, 'index'])->name('consultation.index');
-  Route::get('/create', [App\Http\Controllers\ConsultationController::class, 'create'])->name('consultation.create');
+  Route::get('/create/{id}', [App\Http\Controllers\ConsultationController::class, 'create'])->name('consultation.create');
   Route::post('/store', [App\Http\Controllers\ConsultationController::class, 'store'])->name('consultation.store');
 });
 Auth::routes();

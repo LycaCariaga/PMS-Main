@@ -18,9 +18,11 @@ class ConsultationController extends Controller
   public function create()
   {
     $patients = Patient::all();
+    
     return view('consultation.create', compact('patients'));
   }
-  public function store(Request $request, $id)
+
+  public function store(Request $request, Patient $patient)
   {
     // $input = $request->all();
     // $input = $request->patient->id;
@@ -40,7 +42,9 @@ class ConsultationController extends Controller
     // dd($consultations);
 
     // $consultations->save();
-
+    
+    $patient = patient::findorfail($patient->id);
+    dd($patient->id);
     Consultation::create(
       $request->all()
         );

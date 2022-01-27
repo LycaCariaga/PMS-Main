@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use App\Department;
 use App\Consultation;
+
 class Patient extends Model
 {
     protected $table = 'patients';
@@ -22,7 +23,7 @@ class Patient extends Model
 
     public function consultations()
     {
-      return $this->hasMany(Consultation::class);
+        return $this->hasMany(Consultation::class);
     }
 
     public function setHistoryAttribute($value)
@@ -35,7 +36,16 @@ class Patient extends Model
         return $this->attributes['history[]'] = json_decode($value);
     }
 
-    public function getAge(){
+    public function updateNone()
+    {
+        if ($this->None)
+            $this->isDisabled = true;
+        else
+            $this->isDisabled = false;
+    }
+
+    public function getAge()
+    {
         return \Carbon\Carbon::parse($this->birthday)->diff(\Carbon\Carbon::now())->format('%y years old');
     }
     // \Carbon\Carbon::parse($this->birthday)->diff(\Carbon\Carbon::now())->format('%y years, %m months and %d days');

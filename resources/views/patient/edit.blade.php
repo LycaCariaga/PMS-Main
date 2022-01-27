@@ -51,7 +51,8 @@
                   <div class="col-md-6">
                     <label>Department</label>
                     <select class="form-control" name="department_id">
-                      <option value={{ $patient->department->id }} hidden>{{ $patient->department->department }}</option>
+                      <option value={{ $patient->department->id }} hidden>{{ $patient->department->department }}
+                      </option>
                       @foreach ($departments as $department)
                         <option value="{{ $department->id }}">{{ $department->department }}</option>
                       @endforeach
@@ -66,7 +67,7 @@
 
                   <div class="col-md-6">
                     <label>Gender</label>
-                    <div class="form-check" value="{{ $patient->gender }}">
+                    <div class="form-check" value="{{ $patient->gender }}"> {{-- the hell is this --}}
                       <input class="form-check-input" type="radio" value="Male" name="gender" id="male"
                         {{ $patient->gender == 'Male' ? 'checked' : '' }}>
                       <label class="form-check-label" for="male">
@@ -102,7 +103,8 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" id="flexCheckDiabetes"
-                                value="Diabetes" {{ in_array('Diabetes', $patient->history) ? 'checked' : '' }} >
+                                value="Diabetes" {{ in_array('Diabetes', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckDiabetes">
                                 Diabetes
                               </label>
@@ -110,7 +112,8 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Heart Disease"
-                                id="flexCheckHD" {{ in_array('Heart Disease', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckHD" {{ in_array('Heart Disease', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckHD">
                                 Heart Disease
                               </label>
@@ -118,7 +121,8 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Allergy"
-                                id="flexCheckAllergy" {{ in_array('Allergy', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckAllergy" {{ in_array('Allergy', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckAllergy">
                                 Allergy
                               </label>
@@ -126,7 +130,8 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Measles"
-                                id="flexCheckMeasles" {{ in_array('Measles', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckMeasles" {{ in_array('Measles', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckMeasles">
                                 Measles
                               </label>
@@ -134,7 +139,8 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Asthma"
-                                id="flexCheckAsthma" {{ in_array('Asthma', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckAsthma" {{ in_array('Asthma', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckAsthma">
                                 Asthma
                               </label>
@@ -146,7 +152,8 @@
                           <div class="mx-auto" style="width: 200px;">
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Hepatitis"
-                                id="flexCheckHepatitis" {{ in_array('Hepatitis', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckHepatitis" {{ in_array('Hepatitis', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckHepatitis">
                                 Hepatitis
                               </label>
@@ -154,7 +161,8 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Seizures"
-                                id="flexCheckSeizures" {{ in_array('Seizures', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckSeizures" {{ in_array('Seizures', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckSeizures">
                                 Seizures
                               </label>
@@ -162,15 +170,18 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Scoliosis"
-                                id="flexCheckScoliosis" {{ in_array('Scoliosis', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckScoliosis" {{ in_array('Scoliosis', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckScoliosis">
                                 Scoliosis
                               </label>
                             </div>
 
                             <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="history[]" value="Primary Pulmonary Infection" 
-                              id="flexCheckPPI" {{ in_array('Primary Pulmonary Infection', $patient->history) ? 'checked' : '' }}>
+                              <input class="form-check-input" type="checkbox" name="history[]"
+                                value="Primary Pulmonary Infection" id="flexCheckPPI"
+                                {{ in_array('Primary Pulmonary Infection', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckPPI">
                                 Primary Pulmonary Infection
                               </label>
@@ -179,7 +190,8 @@
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]"
                                 value="Otitis External/Media" id="flexCheckOE"
-                                {{ in_array('Otitis External/Media', $patient->history) ? 'checked' : '' }}>
+                                {{ in_array('Otitis External/Media', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckOE">
                                 Otitis External/Media
                               </label>
@@ -192,7 +204,8 @@
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]"
                                 value="Urinary Track Infection" id="flexCheckUTI"
-                                {{ in_array('Urinary Track Infection', $patient->history) ? 'checked' : '' }}>
+                                {{ in_array('Urinary Track Infection', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckUTI">
                                 Urinary Track Infection
                               </label>
@@ -200,7 +213,8 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Mumps"
-                                id="flexCheckMumps" {{ in_array('Mumps', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckMumps" {{ in_array('Mumps', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckMumps">
                                 Mumps
                               </label>
@@ -208,7 +222,8 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Chicken Pox"
-                                id="flexCheckChicken" {{ in_array('Chicken Pox', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckChicken" {{ in_array('Chicken Pox', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckChicken">
                                 Chicken Pox
                               </label>
@@ -216,7 +231,8 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Thypoid"
-                                id="flexCheckThypoid" {{ in_array('Thypoid', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckThypoid" {{ in_array('Thypoid', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckThypoid">
                                 Thypoid
                               </label>
@@ -224,9 +240,23 @@
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" value="Nose Bleeding"
-                                id="flexCheckNose" {{ in_array('Nose Bleeding', $patient->history) ? 'checked' : '' }}>
+                                id="flexCheckNose" {{ in_array('Nose Bleeding', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
                               <label class="form-check-label" for="flexCheckNose">
                                 Nose Bleeding
+                              </label>
+                            </div>
+                          </div>
+                        </ul>
+
+                        <ul>
+                          <div class="mx-auto" style="width: 200px;">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="history[]" value="None"
+                                id="flexCheckNone" {{ in_array('None', $patient->history) ? 'checked' : '' }}
+                                onClick="ckChange(this)">
+                              <label class="form-check-label" for="flexCheckNone">
+                                None
                               </label>
                             </div>
                           </div>
@@ -241,8 +271,8 @@
                             </button>
                             </form>
 
-                            <button type="button" class="btn btn-icon icon-left btn-danger mr-5" data-dismiss="modal"><i
-                                class="fas fa-ban"></i>Cancel</button>
+                            <a type="button" class="btn btn-icon icon-left btn-danger mr-5"
+                              href="{{ url()->previous() }}"><i class="fas fa-ban"></i>Cancel</a>
                           </div>
                         </div>
 
@@ -255,5 +285,21 @@
           </div>
         </div>
   </section>
-
+  <script>
+    function ckChange(el) {
+      var ckName = document.getElementsByName(el.name);
+      if (el.checked) {
+        for (var i = 0; i < ckName.length; i++) {
+          if (ckName[i] !== el) {
+            ckName[i].checked = false;
+            ckName[i].disabled = true;
+          }
+        }
+      } else {
+        for (var i = 0; i < ckName.length; i++) {
+          ckName[i].disabled = false
+        }
+      }
+    }
+  </script>
 @endsection

@@ -220,6 +220,18 @@
                           </div>
                         </ul>
 
+                        <ul>
+                          <div class="mx-auto" style="width: 200px;">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" name="history[]" value="None"
+                                id="flexCheckNone" onClick="ckChange(this)">
+                              <label class="form-check-label" for="flexCheckNone">
+                                None
+                              </label>
+                            </div>
+                          </div>
+                        </ul>
+
 
                         <div class="modal-footer text-right">
                           <div class="container d-flex justify-content-end">
@@ -230,8 +242,8 @@
                             </button>
                             </form>
 
-                            <button type="button" class="btn btn-icon icon-left btn-danger mr-5" data-dismiss="modal"><i
-                                class="fas fa-ban"></i>Cancel</button>
+                            <a type="button" class="btn btn-icon icon-left btn-danger mr-5" href= "{{ url()->previous() }}"><i
+                                class="fas fa-ban"></i>Cancel</a>
                           </div>
                         </div>
 
@@ -244,5 +256,21 @@
           </div>
         </div>
   </section>
-
+  <script>
+    function ckChange(el) {
+      var ckName = document.getElementsByName(el.name);
+      if (el.checked) {
+        for (var i = 0; i < ckName.length; i++) {
+          if (ckName[i] !== el) {
+            ckName[i].checked = false;
+            ckName[i].disabled = true;
+          }
+        }
+      } else {
+        for (var i = 0; i < ckName.length; i++) {
+          ckName[i].disabled = false
+        }
+      }
+    }
+  </script>
 @endsection
