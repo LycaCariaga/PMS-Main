@@ -58,11 +58,10 @@
                         <input type="number" class="form-control" name="PR" id="PR">
                       </div>
 
-                      {{-- <div class="col-md-4">
-                        <label for="pulrate" class="form-label">PID</label>
-                        <input type="number" class="form-control" name="patient_id" id="patient_id">
-                      </div> --}}
-
+                      {{-- hindi napapass yung patient-id kase wala nmn dito sa form. so eto yung workaround natin. --}}
+                      <div class="col-md-4">
+                        <input type="hidden" class="form-control" name="patient_id" id="patient_id" value={{ $patients->id }}>
+                      </div>
                   </div>
 
                   <div class="col-md-12">
@@ -71,20 +70,20 @@
                     <form class="row">
                       <div class="col-md-2">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="complaint" id="complaint">
+                          <input class="form-check-input" type="radio" name="complaint" id="flexRadioTooth" value="Toothache">
                           <label class="form-check-label" for="flexRadioTooth">
                             Toothache
                           </label>
                         </div>
 
                         <div class="form-check ">
-                          <input class="form-check-input" type="radio" name="complaint" id="complaint">
+                          <input class="form-check-input" type="radio" name="complaint" id="flexRadioLGF" value="Low Grade Fever">
                           <label class="form-check-label" for="flexRadioLGF">
                             Low Grade Fever
                           </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="complaint" id="complaint">
+                          <input class="form-check-input" type="radio" name="complaint" id="flexRadioBP" value="Body Pain">
                           <label class="form-check-label" for="flexRadioBP">
                             Body Pain
                           </label>
@@ -93,19 +92,19 @@
 
                       <div class="col-md-2">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="complaint" id="complaint">
+                          <input class="form-check-input" type="radio" name="complaint" id="flexRadioLBM" value="LBM">
                           <label class="form-check-label" for="flexRadioLBM">
                             LBM
                           </label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="complaint" id="complaint">
+                          <input class="form-check-input" type="radio" name="complaint" id="flexRadioCut" value="Cut">
                           <label class="form-check-label" for="flexRadioCut">
                             Cut
                           </label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="complaint" id="complaint">
+                          <input class="form-check-input" type="radio" name="complaint" id="flexRadioWound" value="Wound">
                           <label class="form-check-label" for="flexRadioWound">
                             Wound
                           </label>
