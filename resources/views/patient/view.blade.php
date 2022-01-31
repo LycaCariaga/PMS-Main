@@ -58,68 +58,35 @@
             </div>
           </div>
           <div class="card shadow mb-3">
-            <!-- Card Header - Dropdown -->
-            <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
-              <h4 class="m-2 bg-primary font-weight-bold text-white">Consultations</h4>
-              <div class="dropdown">
-                <a class="dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-ellipsis-v fa-lg fa-fw text-white"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink"
-                  style="">
-                  <a class="dropdown-item text-primary" href="">Edit</a>
-                  <a class="dropdown-item text-danger" href="#">Delete</a>
-                </div>
-              </div>
-            </div>
-            <!-- Card Body -->
-            <div class="card-body ">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="table">
-                  <thead>
-                    <tr>
-                      <th class="text-primary">Date</th>
-                      <th class="text-primary text-center">Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>2022-01-14 17:51:21</td>
-                      <td>
-                        <div class="d-flex justify-content-center">
-                          <form action="" method="get">
-                            <button type="submit" class="btn btn-icon icon-left btn-primary mr-3"><i
-                                class="fas fa-eye"></i>
-                            </button>
-                          </form>
-                          <button type="submit" class="btn btn-icon icon-left btn-danger mr-3"><i
-                              class="fas fa-trash"></i>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>2022-01-23 17:13:21</td>
-                      <td>
-                        <div class="d-flex justify-content-center">
-                          <form action="" method="get">
-                            <button type="submit" class="btn btn-icon icon-left btn-primary mr-3"><i
-                                class="fas fa-eye"></i>
-                            </button>
-                          </form>
-                          <button type="submit" class="btn btn-icon icon-left btn-danger mr-3"><i
-                              class="fas fa-trash"></i>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-            </div>
+            <!-- Card Header -->
+      <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
+        <h4 class="m-2 bg-primary font-weight-bold text-white">View Consultation</h4>
+      </div>
+      <div class="card-body">
+        <div class="table">
+          <h5 class="text-primary">No Consultation?</h5>
+          <table class="table table-bordered" id="table">
+            <thead>
+              <tr>
+                <th class="text-primary">Id</th>
+                <th class="text-primary">Created</th>
+                <th class="text-primary">Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach ($consultations as $consultation)
+                @if ($patients->id == $consultation->patient_id)
+                  <tr>
+                    <td>{{ $consultation->patient_id }}</td>
+                    <td>{{ $consultation->created_at }}</td>
+                    <td>{{ $consultation->updated_at }}</td>
+                  </tr>
+                @endif
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
           </div>
 
         </div>
