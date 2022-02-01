@@ -59,18 +59,17 @@
           </div>
           <div class="card shadow mb-3">
             <!-- Card Header -->
-      <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
-        <h4 class="m-2 bg-primary font-weight-bold text-white">View Consultation</h4>
-      </div>
-      <div class="card-body">
-        <div class="table">
-          <h5 class="text-primary">No Consultation?</h5>
+            <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
+              <h4 class="m-2 bg-primary font-weight-bold text-white">View Consultation</h4>
+            </div>
+            <div class="card-body">
+            <div class="table">
           <table class="table table-bordered" id="table">
             <thead>
               <tr>
                 <th class="text-primary">Id</th>
                 <th class="text-primary">Created</th>
-                <th class="text-primary">Updated</th>
+                <th class="text-primary">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -79,7 +78,13 @@
                   <tr>
                     <td>{{ $consultation->patient_id }}</td>
                     <td>{{ $consultation->created_at }}</td>
-                    <td>{{ $consultation->updated_at }}</td>
+                    <td>
+                     <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                      
+                        view
+                      </button>
+                    </td>
                   </tr>
                 @endif
               @endforeach
@@ -87,9 +92,8 @@
           </table>
         </div>
       </div>
-          </div>
-
-        </div>
+    </div>
+  </div>
         <div class="col lg-8">
 
           @yield('content')
@@ -98,7 +102,6 @@
               <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
                 <h4 class="m-2 bg-primary font-weight-bold text-white">Add Consultation</h4>
               </div>
-           
               <div class="card-body">
                 <div class="table">
                   <div id="exTab1">
@@ -432,21 +435,55 @@
                 </div> --}}
 
         </div>
-
-        <div class="row">
-          <div class="col lg-8">
-            @yield('content')
-            @include('consultation.consul')
-          </div>
-        </div>
-
       </div>
     </div>
 
 
-
     </div>
   </section>
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        <form method="GET" id="show" >
+                  
+                  @csrf
+                  @foreach ($consultations as $consultation)
+                @if ($patients->id == $consultation->patient_id)
+               
+                        <h6>Patient ID: {{ $consultation->id }}</h6>
+                        <h6>Full Name: {{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }} {{ $consultation->patient->last_name }}</h6>
+                        <h6>Date of Consultation: {{ $consultation->created_at }}</h6>
+                        <h6>Blood Pressure: {{ $consultation->BP }}</h6>
+                        <h6>Temperature: {{ $consultation->temp }}</h6>
+                        <h6>Respiratory Rate: {{ $consultation->RR }}</h6>
+                        <h6>Capillary Refill: {{ $consultation->CR}}</h6>
+                        <h6>Weight: {{ $consultation->weight }}</h6>
+                        <h6>Pulse Rate: {{ $consultation->PR }}</h6>
+                        <h6>Complaint: {{ $consultation->complaint }}</h6>
+                     
+                        @endif
+              @endforeach
+                     </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

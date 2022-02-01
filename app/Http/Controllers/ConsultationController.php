@@ -35,4 +35,5 @@ class ConsultationController extends Controller
 
     return redirect()->route('patient.view', ['id' => $patient]);
   }
+ 
 }
