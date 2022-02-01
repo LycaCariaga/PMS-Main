@@ -457,21 +457,21 @@
                   
                   @csrf
                   @foreach ($consultations as $consultation)
-                @if ($patients->id == $consultation->patient_id)
-               
-                        <h6>Patient ID: {{ $consultation->id }}</h6>
-                        <h6>Full Name: {{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }} {{ $consultation->patient->last_name }}</h6>
-                        <h6>Date of Consultation: {{ $consultation->created_at }}</h6>
-                        <h6>Blood Pressure: {{ $consultation->BP }}</h6>
-                        <h6>Temperature: {{ $consultation->temp }}</h6>
-                        <h6>Respiratory Rate: {{ $consultation->RR }}</h6>
-                        <h6>Capillary Refill: {{ $consultation->CR}}</h6>
-                        <h6>Weight: {{ $consultation->weight }}</h6>
-                        <h6>Pulse Rate: {{ $consultation->PR }}</h6>
-                        <h6>Complaint: {{ $consultation->complaint }}</h6>
-                     
-                        @endif
-              @endforeach
+                    @if ($patients->id == $consultation->patient_id)
+                  
+                            <h6>Patient ID: {{ $consultation->patient_id }}</h6>
+                            <h6>Full Name: {{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }} {{ $consultation->patient->last_name }}</h6>
+                            <h6>Date of Consultation: {{ $consultation->created_at }}</h6>
+                            <h6>Blood Pressure: {{ $consultation->BP }}</h6>
+                            <h6>Temperature: {{ $consultation->temp }}</h6>
+                            <h6>Respiratory Rate: {{ $consultation->RR }}</h6>
+                            <h6>Capillary Refill: {{ $consultation->CR}}</h6>
+                            <h6>Weight: {{ $consultation->weight }}</h6>
+                            <h6>Pulse Rate: {{ $consultation->PR }}</h6>
+                            <h6>Complaint: {{ $consultation->complaint }}</h6>
+                        
+                    @endif
+                  @endforeach
                      </form>
       </div>
       <div class="modal-footer">
