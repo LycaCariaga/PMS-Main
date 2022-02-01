@@ -32,22 +32,22 @@
 
                       <div class="col-md-4">
                         <label for="bp" class="form-label">Blood Pressure</label>
-                        <input type="number" class="form-control" name="BP" id="BP">
+                        <input type="text" class="form-control" name="BP" id="BP">
                       </div>
 
                       <div class="col-md-4">
                         <label for="temp" class="form-label">Temperature</label>
-                        <input type="number" class="form-control" name="temp" id="temp">
+                        <input type="text" class="form-control" name="temp" id="temp">
                       </div>
                       <div class="col-md-4">
                         <label for="resrate" class="form-label">Respiratory
                           Rate</label>
-                        <input type="number" class="form-control" name="RR" id="RR">
+                        <input type="text" class="form-control" name="RR" id="RR">
                       </div>
                       <div class="col-md-4">
                         <label for="capref" class="form-label">Capillary
                           Refill</label>
-                        <input type="number" class="form-control" name="CR" id="CR">
+                        <input type="text" class="form-control" name="CR" id="CR">
                       </div>
                       <div class="col-md-4">
                         <label for="weight" class="form-label">Weight</label>
@@ -55,7 +55,7 @@
                       </div>
                       <div class="col-md-4">
                         <label for="pulrate" class="form-label">Pulse Rate</label>
-                        <input type="number" class="form-control" name="PR" id="PR">
+                        <input type="text" class="form-control" name="PR" id="PR">
                       </div>
 
                       {{-- hindi napapass yung patient-id kase wala nmn dito sa form. so eto yung workaround natin. --}}

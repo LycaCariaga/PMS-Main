@@ -36,7 +36,7 @@
               </div>
             </div>
             <!-- Card Body -->
-            <div class="card-body ">
+            <div class="card-body bg-image card shadow-1-strong"  style="background-image: url('img/bg1.jpg'); ">
               <div class="text-center">
 
                 <img src="{{ asset('img/avata.png') }}" class="img-fluid" style="max-width:50%" alt="">
@@ -60,15 +60,15 @@
           <div class="card shadow mb-3">
             <!-- Card Header -->
             <div class="card-header bg-primary py-3 d-flex flex-row align-items-center justify-content-between">
-              <h4 class="m-2 bg-primary font-weight-bold text-white">View Consultation</h4>
+              <h4 class="m-2 bg-primary font-weight-bold text-white">Consultation List</h4>
             </div>
             <div class="card-body">
             <div class="table">
           <table class="table table-bordered" id="table">
             <thead>
               <tr>
-                <th class="text-primary">Id</th>
-                <th class="text-primary">Created</th>
+                
+                <th class="text-primary">Date and Time</th>
                 <th class="text-primary">Action</th>
               </tr>
             </thead>
@@ -76,7 +76,7 @@
               @foreach ($consultations as $consultation)
                 @if ($patients->id == $consultation->patient_id)
                   <tr>
-                    <td>{{ $consultation->patient_id }}</td>
+                  
                     <td>{{ $consultation->created_at }}</td>
                     <td>
                      <!-- Button trigger modal -->
@@ -446,15 +446,15 @@
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white" id="exampleModalLongTitle">Consultation</h5>
+      
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body ">
-        <form method="GET" id="show" >
-                  
+      <div class="modal-body">
+
                   @csrf
                   @foreach ($consultations as $consultation)
                     @if ($patients->id == $consultation->patient_id)
@@ -472,11 +472,10 @@
                         
                     @endif
                   @endforeach
-                     </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
       
     </div>

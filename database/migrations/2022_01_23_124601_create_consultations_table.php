@@ -15,12 +15,12 @@ class CreateConsultationsTable extends Migration
     {
         Schema::create('consultations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('BP');
-            $table->integer('temp');
-            $table->integer('RR');
-            $table->integer('CR');
-            $table->integer('weight');
-            $table->integer('PR');
+            $table->string('BP');
+            $table->string('temp');
+            $table->string('RR');
+            $table->string('CR');
+            $table->string('weight');
+            $table->string('PR');
             $table->string('complaint');
             $table->biginteger('patient_id')->unsigned();
 
