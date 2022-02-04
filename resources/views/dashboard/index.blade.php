@@ -38,25 +38,26 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">
                 <div class="card-icon bg-warning">
-                  <i class="fas fa-prescription-bottle-alt"></i>
+                  <i class="fas fa-file-prescription"></i>
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
-                    <h4>Medicines</h4>
+                    <h4>Consultations</h4>
                   </div>
                   <div class="card-body">
-                    1,201
+                  {{$consultations}}
                   </div>
                 </div>
               </div>
             </div>
+<!-- 
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
               <div class="card card-statistic-1">
                 <div class="card-icon bg-success">
-                  <i class="fas fa-medkit"></i>
+                  <i class="fas fa-medkit">fas fa-prescription-bottle-alt</i>
                 </div>
                 <div class="card-wrap">
                   <div class="card-header">
@@ -67,8 +68,8 @@
                   </div>
                 </div>
               </div>
-            </div>                   -->
-          </div>
+            </div>                 
+          </div> -->
 
            
         </div>
