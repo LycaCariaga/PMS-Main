@@ -29,13 +29,8 @@
                       <!-- <th class="text-primary">Gender</th>
                       <th class="text-primary text-center">B-Day</th> -->
                       <th class="text-primary text-center">Department</th>
-<<<<<<< Updated upstream
                       
                       <!-- <th class="text-primary text-center">Medical History</th> -->
-=======
-
-                      <th class="text-primary text-center">Medical History</th>
->>>>>>> Stashed changes
                       <th class="text-primary text-center">Action</th>
                     </tr>
                   </thead>
@@ -48,13 +43,8 @@
                         <!-- <td>{{ $patient->gender }}</td>
                         <td>{{ $patient->birthday }}</td> -->
                         <td>{{ $patient->department->department }}</td>
-<<<<<<< Updated upstream
                        
                         <!-- <td>
-=======
-
-                        <td>
->>>>>>> Stashed changes
                           {{-- {{ print_r($patient->history) }} --}}
                           {{-- @foreach ($patient->history as $value)
                                         {{$value}},
