@@ -35,5 +35,9 @@ class ConsultationController extends Controller
 
     return redirect()->route('patient.view', ['id' => $patient]);
   }
- 
+  public function show()
+  {
+    $consultation = Consultation::all();
+    return view('consultations.show', compact('consultation'));
+  }
 }

@@ -34,11 +34,11 @@
                       <th class="text-primary">Id</th>
                       <th class="text-primary">Full Name</th>
                       <th class="text-primary">Date and Time Admitted</th>
-                      <th class="text-primary">Gender</th>
-                      <th class="text-primary text-center">B-Day</th>
+                      <!-- <th class="text-primary">Gender</th>
+                      <th class="text-primary text-center">B-Day</th> -->
                       <th class="text-primary text-center">Department</th>
                       
-                      <th class="text-primary text-center">Medical History</th>
+                      <!-- <th class="text-primary text-center">Medical History</th> -->
                       <th class="text-primary text-center">Action</th>
                     </tr>
                   </thead>
@@ -48,11 +48,11 @@
                         <td>{{ $patient->id }}</td>
                         <td>{{ $patient->first_name }} {{ $patient->middle_name }} {{ $patient->last_name }}</td>
                         <td>{{ $patient->created_at }}</td>
-                        <td>{{ $patient->gender }}</td>
-                        <td>{{ $patient->birthday }}</td>
+                        <!-- <td>{{ $patient->gender }}</td>
+                        <td>{{ $patient->birthday }}</td> -->
                         <td>{{ $patient->department->department }}</td>
                        
-                        <td>
+                        <!-- <td>
                           {{-- {{ print_r($patient->history) }} --}}
                           {{-- @foreach ($patient->history as $value)
                                         {{$value}},
@@ -61,7 +61,7 @@
                             {{ $value }},
                           @endforeach
 
-                        </td>
+                        </td> -->
                         <td>
                           <div class="d-flex justify-content-center">
                             <form action="{{ route('patient.view', $patient->id) }}" method="get">

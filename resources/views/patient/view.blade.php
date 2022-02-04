@@ -79,11 +79,17 @@
                   
                     <td>{{ $consultation->created_at }}</td>
                     <td>
-                     <!-- Button trigger modal -->
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                      
-                        view
-                      </button>
+                    <div>
+                   
+                       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#yourModal{{$consultation->id}}">
+                       View
+                        </button>
+                        <!-- <button type="button" class="btn btn-primary btn-md mr-5" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">
+                            View
+                        </button> -->
+                     
+                    </div>
                     </td>
                   </tr>
                 @endif
@@ -442,45 +448,42 @@
     </div>
   </section>
 <!-- Modal -->
-
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-primary">
-        <h5 class="modal-title text-white" id="exampleModalLongTitle">Consultation</h5>
-      
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+@foreach ($consultations as $consultation)    
+    <div class="modal fade" id="yourModal{{$consultation->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-primary">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title text-white" id="myModalLabel"></h4>
+            
+          </div>
+          <div class="modal-body">
+          <h6>ID: {{ $consultation->id }}</h6>
+            <h6>Full Name: {{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }} {{ $consultation->patient->last_name }}</h6>
+            <h6>Date of Consultation: {{ $consultation->created_at }}</h6>
+            <h6>Blood Pressure: {{ $consultation->BP }}</h6>
+            <h6>Temperature: {{ $consultation->temp }}</h6>
+            <h6>Respiratory Rate: {{ $consultation->RR }}</h6>
+            <h6>Capillary Refill: {{ $consultation->CR}}</h6>
+            <h6>Weight: {{ $consultation->weight }}</h6>
+            <h6>Pulse Rate: {{ $consultation->PR }}</h6>
+            <h6>Complaint: {{ $consultation->complaint }}</h6>
+                           
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
+    </div>
+@endforeach
 
-                  @csrf
-                  @foreach ($consultations as $consultation)
-                    @if ($patients->id == $consultation->patient_id)
-                  
-                            <h6>Patient ID: {{ $consultation->patient_id }}</h6>
-                            <h6>Full Name: {{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }} {{ $consultation->patient->last_name }}</h6>
-                            <h6>Date of Consultation: {{ $consultation->created_at }}</h6>
-                            <h6>Blood Pressure: {{ $consultation->BP }}</h6>
-                            <h6>Temperature: {{ $consultation->temp }}</h6>
-                            <h6>Respiratory Rate: {{ $consultation->RR }}</h6>
-                            <h6>Capillary Refill: {{ $consultation->CR}}</h6>
-                            <h6>Weight: {{ $consultation->weight }}</h6>
-                            <h6>Pulse Rate: {{ $consultation->PR }}</h6>
-                            <h6>Complaint: {{ $consultation->complaint }}</h6>
-                        
-                    @endif
-                  @endforeach
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
       
     </div>
   </div>
-</div>
+</div> -->
 
 
 

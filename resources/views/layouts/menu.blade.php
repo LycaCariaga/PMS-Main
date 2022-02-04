@@ -17,7 +17,7 @@
     <ul class="dropdown-menu" style="display: none;">
     <li><a class="nav-link" href="{{route('patient.index')}}">Patient List</a></li>
     <li><a class="nav-link" href="{{route('department.index')}}">Departments</a></li>
-    <li><a class="nav-link" href="{{route('patient.create')}}">Add Patient</a></li>
+    <!-- <li><a class="nav-link" href="{{route('patient.create')}}">Add Patient</a></li> -->
    
     </ul>
   </li>
