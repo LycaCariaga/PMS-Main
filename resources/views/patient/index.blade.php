@@ -17,18 +17,10 @@
               </a>
               <span class="pr-5"></span>
             </div>
-            <div class="card-header d-flex justify-content-start">
-              <div class="form-outline">
-                <input type="search" id="form1" class="form-control" placeholder="Search" />
-              </div>
-              <button type="button" class="btn btn-primary">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
 
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="table">
+                <table class="table table-bordered" id="dataTable">
                   <thead>
                     <tr>
                       <th class="text-primary">Id</th>
@@ -37,8 +29,13 @@
                       <!-- <th class="text-primary">Gender</th>
                       <th class="text-primary text-center">B-Day</th> -->
                       <th class="text-primary text-center">Department</th>
+<<<<<<< Updated upstream
                       
                       <!-- <th class="text-primary text-center">Medical History</th> -->
+=======
+
+                      <th class="text-primary text-center">Medical History</th>
+>>>>>>> Stashed changes
                       <th class="text-primary text-center">Action</th>
                     </tr>
                   </thead>
@@ -51,8 +48,13 @@
                         <!-- <td>{{ $patient->gender }}</td>
                         <td>{{ $patient->birthday }}</td> -->
                         <td>{{ $patient->department->department }}</td>
+<<<<<<< Updated upstream
                        
                         <!-- <td>
+=======
+
+                        <td>
+>>>>>>> Stashed changes
                           {{-- {{ print_r($patient->history) }} --}}
                           {{-- @foreach ($patient->history as $value)
                                         {{$value}},
@@ -66,17 +68,17 @@
                           <div class="d-flex justify-content-center">
                             <form action="{{ route('patient.view', $patient->id) }}" method="get">
                               @csrf
-                              <button type="submit"
-                                  class="btn btn-icon icon-left btn-primary mr-3"><i class="fas fa-eye"></i>
+                              <button type="submit" class="btn btn-icon icon-left btn-primary mr-3"><i
+                                  class="fas fa-eye"></i>
                               </button>
                             </form>
-                           <form action="{{ route('patient.delete', $patient->id) }}" method="post">
+                            <form action="{{ route('patient.delete', $patient->id) }}" method="post">
                               @csrf
-                            <button type="submit" class="btn btn-icon icon-left btn-danger mr-3"><i
-                                class="fas fa-trash"></i>
-                            </button>
+                              <button type="submit" class="btn btn-icon icon-left btn-danger mr-3"><i
+                                  class="fas fa-trash"></i>
+                              </button>
                             </form>
-                           
+
                           </div>
                         </td>
                       </tr>
@@ -91,4 +93,3 @@
     </div>
   </section>
 @endsection
-
