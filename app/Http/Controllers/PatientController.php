@@ -54,7 +54,7 @@ class PatientController extends Controller
    public function update(Request $request){
       
       $patient = Patient::find($request->id)->update($request->all());
-    return redirect()->route('patient.index');
+    return redirect()->route('patient.view', ['id' => $patient]);
     
    }
 
@@ -65,4 +65,7 @@ class PatientController extends Controller
 
       return redirect()->route('patient.index');
   }
+  public function initial(){
+   return view('patient.initial');
+}
 }

@@ -111,7 +111,7 @@
               <div class="card-body">
                 <div class="table">
                   <div id="exTab1">
-                    <ul class="nav nav-pills">
+                    <!-- <ul class="nav nav-pills">
                       <li class="active">
                         <a class="nav-link " href="#1a" data-toggle="tab">Initial Assessment</a>
                       </li>
@@ -121,7 +121,7 @@
                       <li>
                         <a class="nav-link " href="#3a" data-toggle="tab">Treatment</a>
                       </li>
-                    </ul>
+                    </ul> -->
 
                     <div class="tab-content clearfix">
                       <div class="tab-pane active" id="1a">
@@ -458,6 +458,7 @@
             
           </div>
           <div class="modal-body">
+          @if ($patients->id == $consultation->patient_id)
           <h6>ID: {{ $consultation->id }}</h6>
             <h6>Full Name: {{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }} {{ $consultation->patient->last_name }}</h6>
             <h6>Date of Consultation: {{ $consultation->created_at }}</h6>
@@ -468,7 +469,7 @@
             <h6>Weight: {{ $consultation->weight }}</h6>
             <h6>Pulse Rate: {{ $consultation->PR }}</h6>
             <h6>Complaint: {{ $consultation->complaint }}</h6>
-                           
+                @endif           
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

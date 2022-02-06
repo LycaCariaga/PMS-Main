@@ -17,7 +17,13 @@
     <ul class="dropdown-menu" style="display: none;">
     <li><a class="nav-link" href="{{route('patient.index')}}">Patient List</a></li>
     <li><a class="nav-link" href="{{route('department.index')}}">Departments</a></li>
-    <!-- <li><a class="nav-link" href="{{route('patient.create')}}">Add Patient</a></li> -->
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file-prescription"></i> <span>Consultation</span></a>
+    <ul class="dropdown-menu" style="display: none;">
+    <li><a class="nav-link" href="{{route('consultation.index')}}">Minor Complaints</a></li>
+ 
    
     </ul>
   </li>
