@@ -37,8 +37,9 @@ class ConsultationController extends Controller
   }
   public function show($id)
   {
- 
-    $consultations = Consultation::with('patient')->get();
+    
+    
+    $consultations = Consultation::with('patient')->findOrFail($id);
 
     return view('consultation.show', compact('consultations'));
    
