@@ -73,5 +73,9 @@ Route::group(['prefix' => 'consultation','middleware' => 'auth'], function(){
   Route::get('/show/{id}', [App\Http\Controllers\ConsultationController::class, 'show'])->name('consultation.show');
 });
 Auth::routes();
-
+Route::group(['prefix' => 'intervention','middleware' => 'auth'], function(){
+  Route::get('/index', [App\Http\Controllers\InterventionController::class, 'index'])->name('intervention.index');
+  Route::get('/create/{id}', [App\Http\Controllers\InterventionController::class, 'create'])->name('intervention.create');
+  Route::post('/store', [App\Http\Controllers\InterventionController::class, 'store'])->name('intervention.store');
+});
 //Route::get('/patient/index', 'PatientController@index')->name('patient.index');

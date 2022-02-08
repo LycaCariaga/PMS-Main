@@ -24,29 +24,21 @@
                   <thead>
                     <tr>
                       <th class="text-primary">Id</th>
-                      <th class="text-primary">Patient Name</th>
-                      <th class="text-primary">Date and Time Admitted</th>
-                      <th class="text-primary text-center">Complaints</th>
-                      <th class="text-primary text-center">Action</th>
+                      <th class="text-primary">Consultation Id</th>
+                      <th class="text-primary">Complaint</th>
+                      <th class="text-primary">Medicine</th>
+                      <th class="text-primary">Supply</th>
+                      
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach ($consultations as $consultation)
+                  @foreach ($interventions as $intervention)
                       <tr>
-                        <td>{{ $consultation->id }}</td>
-                        <td>{{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }} {{ $consultation->patient->last_name }}</td>
-                        <td>{{ $consultation->created_at }}</td>
-                        
-                        <td>{{ $consultation->complaint }}</td>
-                        <td>
-                        <form action="{{ route('consultation.show', $consultation->id) }}" method="get">
-                              @csrf
-                              <button type="submit" class="btn btn-icon icon-left btn-primary mr-3">
-                               Intervention
-                              </button>
-                            </form>
-                            </td>
-                            
+                        <td>{{ $intervention->id }}</td>
+                        <td>{{ $intervention->consultation_id }}</td>
+                        <td>{{ $intervention->consultation->complaint }}</td>
+                        <td>{{ $intervention->medicine }}</td>
+                        <td>{{ $intervention->supply }}</td>  
                         </tr>
                      @endforeach
                   </tbody>

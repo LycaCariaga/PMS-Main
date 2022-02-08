@@ -25,7 +25,9 @@ class CreateConsultationsTable extends Migration
             $table->biginteger('patient_id')->unsigned();
 
             $table->timestamps();
-            $table->foreign('patient_id')->references('id')->on('patients')->onUpdate('cascade');
+            $table->foreign('patient_id')->references('id')->on('patients')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

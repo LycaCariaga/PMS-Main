@@ -48,5 +48,15 @@ class Patient extends Model
     {
         return \Carbon\Carbon::parse($this->birthday)->diff(\Carbon\Carbon::now())->format('%y years old');
     }
+    // one through intervention
+    public function intervention()
+    {
+        return $this->hasOneThrough(Intervention::class,
+        Consultation::class,
+        'patient_id',
+        'consultation_id'
+    );
+    }
+
     // \Carbon\Carbon::parse($this->birthday)->diff(\Carbon\Carbon::now())->format('%y years, %m months and %d days');
 }

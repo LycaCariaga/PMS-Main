@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Patient;
+use App\Intervention;
 class Consultation extends Model
 {
     protected $table = 'consultations';
@@ -14,5 +15,9 @@ class Consultation extends Model
     public function patient()
     {
         return $this->belongsTo(Patient::class);
+    }
+    public function intervention()
+    {
+        return $this->hasOne(Intervention::class);
     }
 }
