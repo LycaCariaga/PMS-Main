@@ -17,7 +17,7 @@ $(document).ready(function(){
 
     <section class="section">
         <div class="section-header">
-            <h3 class="page__heading">Default</h3>
+            <h3 class="page__heading">Patient Management</h3>
         </div>
         <div class="section-body">
 
@@ -85,17 +85,12 @@ $(document).ready(function(){
                         <label for="waiver" class="form-label">Signed Waiver</label>
                         <input type="file" class="form-control" name="inter" id="waiver">
                     </div>
-       <hr>
-          <button type="submit" class="btn btn-icon icon-left btn-primary mr-5"><i class="far fa-save"></i>
+                   <hr>
+                    <button type="submit" class="btn btn-icon icon-left btn-primary mr-5"><i class="far fa-save"></i>
                     Save
                     </button>
               
-            </div>
-         
-
-            
-
-                 
+                      </div>
                     </form>
 
        
