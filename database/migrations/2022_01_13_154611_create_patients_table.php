@@ -22,7 +22,7 @@ class CreatePatientsTable extends Migration
             $table->string('gender');
             
             $table->biginteger('department_id')->unsigned();
-
+            $table->string('history_others')->nullable();
             $table->timestamps();
 
             $table->foreign('department_id')->references('id')->on('departments')->onUpdate('cascade');
