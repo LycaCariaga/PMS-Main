@@ -258,13 +258,7 @@
                                 None
                               </label>
                             </div>
-                            <div class="form-group">                                                                                                           {{-- do not press enter, nasisira formatting --}}
-                              <label class="form-check-label" for="flexCheckOthers">
-                                Others
-                              </label>
-                              <textarea id=otherstext name="history_others" class="form-control" type="text" placeholder="Leave blank if none">{{ $patient->history_others }}</textarea>
-                              <small id="othershelp" class="form-text text-muted">If multiple, please seperate by comma.</small>
-                            </div>
+                            <!--  -->
                           </div>
                         </ul>
 

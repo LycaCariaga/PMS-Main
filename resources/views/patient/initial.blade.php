@@ -24,7 +24,7 @@
               
               <div class="row-2">
   <div class="col-sm-6">
-    <div class="card">
+    <div class="card bg-dark">
       <div class="card-body">
         <h5 class="card-title">{{$patient->id}}</h5>
         <h5>{{$patient->first_name}} {{$patient->middle_name}} {{$patient->last_name}}</h5>

@@ -45,7 +45,7 @@ class InterventionController extends Controller
       Intervention::create(
         $request->all()
       );
-      // return $intervention->makeHidden('consultation_id');
+    
       return redirect()->route('intervention.index', ['id' => $consultation]);
     }
 
@@ -57,7 +57,14 @@ class InterventionController extends Controller
      */
     public function show($id)
     {
-        //
+     
+        
+        
+        $interventions = Intervention::with('consultation')->findOrFail($id);
+    
+        return view('intervention.show', compact('interventions'));
+       
+     
     }
 
     /**

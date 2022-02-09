@@ -46,11 +46,12 @@
                   </tbody>
                 </table>
               </div> -->
+
              
               @foreach ($interventions as $intervention)
        
               <div class="row-2">
-  <div class="col-sm-6">
+  <div class="col-sm-12">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title text-primary">{{$intervention->consultation->patient->first_name}} 
@@ -58,7 +59,15 @@
           {{$intervention->consultation->patient->last_name}} </h5>
           <h6>Complaint: {{ $intervention->consultation->complaint }}</h6>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">View Details</a>
+        <!-- <a href="#" class="btn btn-primary">View Details</a> -->
+        <form action="{{ route('intervention.show', $intervention->id) }}" method="get">
+                              @csrf
+                              <button type="submit" class="btn btn-icon icon-left btn-primary mr-3">
+                              View Details
+                              </button>
+                            </form>
+                            </td>
+                            
       </div>
     </div>
   </div>

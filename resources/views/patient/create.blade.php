@@ -229,11 +229,7 @@
                                 None
                               </label>
                             </div>
-                            <div class="form-group">
-                              Others
-                              <textarea id=otherstext name="history_others" class="form-control" type="text" placeholder="Leave blank if none"></textarea>
-                              <small id="othershelp" class="form-text text-muted">If multiple, please seperate by comma.</small>
-                            </div>
+                            <!--  -->
                           </div>
 
                         </ul>
