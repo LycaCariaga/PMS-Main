@@ -30,11 +30,11 @@ class ConsultationController extends Controller
     // $departments = Department::all();
     // $request->get('history[]');
 
-    Consultation::create(
+    $consultation=Consultation::create(
       $request->all()
     );
 
-    return redirect()->route('patient.view', ['id' => $patient]);
+    return redirect()->route('consultation.show',  ['id' => $consultation]);
   }
   public function show($id)
   {

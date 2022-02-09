@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Patient;
 use App\Department;
 use App\Consultation;
-
+use App\Intervention;
 
 class PatientController extends Controller
 {
@@ -38,8 +38,8 @@ class PatientController extends Controller
    {
       $patients = Patient::findorfail($id);
       $consultations = Consultation::with('patient')->get();
-
-      return view('patient.view', compact('patients', 'consultations'));
+      $interventions = Intervention::with('consultation')->get();
+      return view('patient.view', compact('patients', 'consultations','interventions'));
    }
 
   
@@ -66,6 +66,8 @@ class PatientController extends Controller
       return redirect()->route('patient.index');
   }
   public function initial(){
-   return view('patient.initial');
+   $patients = Patient::with('department')->get();
+   $consultations = Consultation::with('patient')->get();
+      return view('patient.initial', compact('patients','consultations'));
 }
 }

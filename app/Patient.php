@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use App\Department;
 use App\Consultation;
-
+use App\Intervention;
 class Patient extends Model
 {
     protected $table = 'patients';

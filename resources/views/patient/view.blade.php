@@ -78,7 +78,7 @@
                         <tr>
 
                           <td>{{ $consultation->created_at ->format('F d, Y \a\t H:i:s')}}</td>
-                          <!-- <td>
+                          <td>
                             <div>
 
                               <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
@@ -87,15 +87,15 @@
                               </button>
                               
                             </div>
-                          </td> -->
+                          </td>
                           <td>
-                        <form action="{{ route('consultation.show', $consultation->id) }}" method="get">
+                        <!-- <form action="{{ route('consultation.show', $consultation->id) }}" method="get">
                               @csrf
                               <button type="submit" class="btn btn-icon icon-left btn-primary mr-3">
                                Intervention
                               </button>
                             </form>
-                            </td>
+                            </td> -->
                         </tr>
                       @endif
                     @endforeach
@@ -141,6 +141,8 @@
               <h6>Weight: {{ $consultation->weight }}</h6>
               <h6>Pulse Rate: {{ $consultation->PR }}</h6>
               <h6>Complaint: {{ $consultation->complaint }}</h6>
+  
+              
             @endif
           </div>
           <div class="modal-footer">

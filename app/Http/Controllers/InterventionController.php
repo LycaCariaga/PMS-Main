@@ -45,7 +45,7 @@ class InterventionController extends Controller
       Intervention::create(
         $request->all()
       );
-  
+      // return $intervention->makeHidden('consultation_id');
       return redirect()->route('intervention.index', ['id' => $consultation]);
     }
 
