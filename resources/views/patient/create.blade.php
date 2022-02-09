@@ -229,7 +229,13 @@
                                 None
                               </label>
                             </div>
+                            <div class="form-group">
+                              Others
+                              <textarea id=otherstext name="history_others" class="form-control" type="text" placeholder="Leave blank if none"></textarea>
+                              <small id="othershelp" class="form-text text-muted">If multiple, please seperate by comma.</small>
+                            </div>
                           </div>
+
                         </ul>
 
 
@@ -242,11 +248,10 @@
                             </button>
                             </form>
 
-                            <a type="button" class="btn btn-icon icon-left btn-danger mr-5" href= "{{ url()->previous() }}"><i
-                                class="fas fa-ban"></i>Cancel</a>
+                            <a type="button" class="btn btn-icon icon-left btn-danger mr-5"
+                              href="{{ url()->previous() }}"><i class="fas fa-ban"></i>Cancel</a>
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </div>
@@ -256,21 +261,5 @@
           </div>
         </div>
   </section>
-  <script>
-    function ckChange(el) {
-      var ckName = document.getElementsByName(el.name);
-      if (el.checked) {
-        for (var i = 0; i < ckName.length; i++) {
-          if (ckName[i] !== el) {
-            ckName[i].checked = false;
-            ckName[i].disabled = true;
-          }
-        }
-      } else {
-        for (var i = 0; i < ckName.length; i++) {
-          ckName[i].disabled = false
-        }
-      }
-    }
-  </script>
+
 @endsection

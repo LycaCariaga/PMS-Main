@@ -16,22 +16,21 @@ class PatientController extends Controller
       $patients = Patient::with('department')->get();
       return view('patient.index', compact('patients'));
    }
-   
+
    public function create()
-   {  
+   {
       $departments = Department::all();
       return view('patient.create', compact('departments'));
    }
 
    public function save(Request $request)
    {
- 
+
       $input = $request->all();
-      $input['history'] = $request->input('history'); 
+      $input['history'] = $request->input('history');
       Patient::create($input);
-      
+
       return redirect()->route('patient.index');
-      
    }
 
    public function view($id)
@@ -39,35 +38,40 @@ class PatientController extends Controller
       $patients = Patient::findorfail($id);
       $consultations = Consultation::with('patient')->get();
       $interventions = Intervention::with('consultation')->get();
-      return view('patient.view', compact('patients', 'consultations','interventions'));
+      return view('patient.view', compact('patients', 'consultations', 'interventions'));
    }
 
-  
 
-   public function edit(Request $request){
+
+   public function edit(Request $request)
+   {
       $patient = Patient::find($request->id);
       $departments = Department::all();
       $request->get('history[]');
-     return view('patient.edit', compact('patient','departments')); 
+      return view('patient.edit', compact('patient', 'departments'));
    }
 
-   public function update(Request $request){
-      
+   public function update(Request $request)
+   {
+
       $patient = Patient::find($request->id)->update($request->all());
-    return redirect()->route('patient.view', ['id' => $patient]);
-    
+      $id = Patient::find($request->id);
+
+      return redirect()->route('patient.view', [ $id ]);
    }
 
-   public function delete($id){
-        
+   public function delete($id)
+   {
+
       $patient = Patient::findorfail($id);
       $patient->delete();
 
       return redirect()->route('patient.index');
-  }
-  public function initial(){
-   $patients = Patient::with('department')->get();
-   $consultations = Consultation::with('patient')->get();
-      return view('patient.initial', compact('patients','consultations'));
-}
+   }
+   public function initial()
+   {
+      $patients = Patient::with('department')->get();
+      $consultations = Consultation::with('patient')->get();
+      return view('patient.initial', compact('patients', 'consultations'));
+   }
 }

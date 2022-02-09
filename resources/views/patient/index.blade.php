@@ -35,7 +35,7 @@
                       <tr>
                         <td>{{ $patient->id }}</td>
                         <td>{{ $patient->first_name }} {{ $patient->middle_name }} {{ $patient->last_name }}</td>
-                        <td>{{ $patient->created_at ->format('F d, Y \a\t H:i:s')}}</td>
+                        <td>{{ $patient->created_at->format('F d, Y \a\t H:i:s')}}</td>
                         <td>{{ $patient->department->department }}</td>
                         <td>
                           <div class="d-flex justify-content-center">

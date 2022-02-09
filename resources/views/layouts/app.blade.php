@@ -98,4 +98,31 @@
   });
 </script>
 
+{{-- might use later --}}
+{{-- <script>
+  $('#flexCheckOthers').change(function() {
+    $("#otherstext").prop("disabled", !$(this).is(':checked'));
+    $("#otherstext").val('');
+  });
+</script> --}}
+
+<script>
+  function ckChange(el) {
+    var ckName = document.getElementsByName(el.name);
+    if (el.checked) {
+      for (var i = 0; i < ckName.length; i++) {
+        if (ckName[i] !== el) {
+          ckName[i].checked = false;
+          ckName[i].disabled = true;
+          $("#otherstext").val('');
+        }
+      }
+    } else {
+      for (var i = 0; i < ckName.length; i++) {
+        ckName[i].disabled = false;
+      }
+    }
+  }
+</script>
+
 </html>

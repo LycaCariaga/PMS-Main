@@ -51,9 +51,11 @@
               <h6> MEDICAL HISTORY</h6>
               <h6>
                 @foreach ((array) $patients->history as $value)
-                  {{ $value }} |
+                  @if ($value != 'others')
+                    {{ $value }} |
+                  @endif
                 @endforeach
-
+                {{ $patients->history_others }}
               </h6>
             </div>
           </div>
@@ -77,7 +79,7 @@
                       @if ($patients->id == $consultation->patient_id)
                         <tr>
 
-                          <td>{{ $consultation->created_at ->format('F d, Y \a\t H:i:s')}}</td>
+                          <td>{{ $consultation->created_at->format('F d, Y \a\t H:i:s') }}</td>
                           <td>
                             <div>
 
@@ -85,17 +87,17 @@
                                 data-target="#yourModal{{ $consultation->id }}">
                                 View
                               </button>
-                              
+
                             </div>
                           </td>
                           <td>
-                        <!-- <form action="{{ route('consultation.show', $consultation->id) }}" method="get">
-                              @csrf
-                              <button type="submit" class="btn btn-icon icon-left btn-primary mr-3">
-                               Intervention
-                              </button>
-                            </form>
-                            </td> -->
+                            <!-- <form action="{{ route('consultation.show', $consultation->id) }}" method="get">
+                                      @csrf
+                                      <button type="submit" class="btn btn-icon icon-left btn-primary mr-3">
+                                       Intervention
+                                      </button>
+                                    </form>
+                                    </td> -->
                         </tr>
                       @endif
                     @endforeach
@@ -141,8 +143,8 @@
               <h6>Weight: {{ $consultation->weight }}</h6>
               <h6>Pulse Rate: {{ $consultation->PR }}</h6>
               <h6>Complaint: {{ $consultation->complaint }}</h6>
-  
-              
+
+
             @endif
           </div>
           <div class="modal-footer">
@@ -154,6 +156,7 @@
     </div>
   @endforeach
 
+  {{-- bkt may pagala galang /div dito --}}
   </div>
 
   </div>

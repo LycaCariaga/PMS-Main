@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 
   <section class="section">
@@ -259,6 +258,13 @@
                                 None
                               </label>
                             </div>
+                            <div class="form-group">                                                                                                           {{-- do not press enter, nasisira formatting --}}
+                              <label class="form-check-label" for="flexCheckOthers">
+                                Others
+                              </label>
+                              <textarea id=otherstext name="history_others" class="form-control" type="text" placeholder="Leave blank if none">{{ $patient->history_others }}</textarea>
+                              <small id="othershelp" class="form-text text-muted">If multiple, please seperate by comma.</small>
+                            </div>
                           </div>
                         </ul>
 
@@ -275,7 +281,6 @@
                               href="{{ url()->previous() }}"><i class="fas fa-ban"></i>Cancel</a>
                           </div>
                         </div>
-
                       </div>
                     </div>
                   </div>
@@ -285,21 +290,4 @@
           </div>
         </div>
   </section>
-  <script>
-    function ckChange(el) {
-      var ckName = document.getElementsByName(el.name);
-      if (el.checked) {
-        for (var i = 0; i < ckName.length; i++) {
-          if (ckName[i] !== el) {
-            ckName[i].checked = false;
-            ckName[i].disabled = true;
-          }
-        }
-      } else {
-        for (var i = 0; i < ckName.length; i++) {
-          ckName[i].disabled = false
-        }
-      }
-    }
-  </script>
 @endsection
