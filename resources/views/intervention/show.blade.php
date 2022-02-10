@@ -61,7 +61,6 @@
 
               
             </div>
-
             <div class="col-md-12">
               <h6 class=" text-primary p-2">Complaint</h6>
               <h6>Complaint: {{ $interventions->consultation->complaint }}</h6>
@@ -71,7 +70,9 @@
               <h6 class=" text-primary p-2">Intervention</h6>
               <h6>Medicine Given: {{ $interventions->medicine }}</h6>
               <h6>Supply Given:  {{ $interventions->supply }}</h6>
-<hr>
+              @foreach ($users as $user)
+<hr><h5> Prescribe By: {{ $user->firstName }} {{ $user->lastName }}</h5>
+@endforeach
             </div>
           </div>
         </div>

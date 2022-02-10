@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Intervention;
 use App\Consultation;
 use App\Patient;
+use App\User;
 class InterventionController extends Controller
 {
     /**
@@ -61,8 +62,9 @@ class InterventionController extends Controller
         
         
         $interventions = Intervention::with('consultation')->findOrFail($id);
-    
-        return view('intervention.show', compact('interventions'));
+        $users = User::all();
+     
+        return view('intervention.show', compact('interventions','users'));
        
      
     }
