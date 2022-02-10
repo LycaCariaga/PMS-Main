@@ -14,16 +14,16 @@
                 <h6>Medicine Name</h6>
               </label>
               <input type="text" class="form-control" name="medicine" id="medicine">
-              <label for="medicine" class="form-label text-primary">
+              <!-- <label for="medicine" class="form-label text-primary">
                 <h6>Quantity</h6>
-              </label>
-              <input type="text" class="form-control" name="medicineQuantity" id="medicineQuantity">
-              <hr>
-              <label for="choiceslabelsdeprecated" class="form-label text-primary">
+              </label> -->
+              <!-- <input type="text" class="form-control" name="medicineQuantity" id="medicineQuantity">
+              <hr> -->
+              <!-- <label for="choiceslabelsdeprecated" class="form-label text-primary">
                 <h6>Clinic Rest</h6>
                 <h6>Sent Home</h6>
                 <h6>Sent to Emergency Room</h6>
-              </label>
+              </label> -->
             </div>
             <!-- <div class="col-md-6">
                  <label for="mqty" class="form-label text-primary"><h6>Quantity</h6></label>
@@ -34,12 +34,12 @@
                 <h6>Supply Name</h6>
               </label>
               <input type="text" class="form-control" name="supply" id="supply">
-              <label for="supply" class="form-label text-primary">
+              <!-- <label for="supply" class="form-label text-primary">
                 <h6>Quantity</h6>
               </label>
               <input type="text" class="form-control" name="supplyQuantity" id="supplyQuantity">
               <hr>
-              </label>
+              </label> -->
             </div>
             <!-- <div class="col-md-6">
                  <label for="sqty" class="form-label text-primary"><h6>Quantity</h6></label>
@@ -82,7 +82,7 @@
                      <label for="waiver" class="form-label">Signed Waiver</label>
                      <input type="file" class="form-control" name="inter" id="waiver">
                  </div> -->
-                 <div class="col-md-12">
+                 <!-- <div class="col-md-12">
                   <hr>
                   <label for="eroom" class="form-label">Emergency Room</label>
                   <input type="text" class="form-control" name="inter" id="eroom">
@@ -90,7 +90,7 @@
                   <input type="text" class="form-control" name="inter" id="reroom">
                   <label for="waiver" class="form-label">Signed Waiver</label>
                   <input type="file" class="form-control" name="inter" id="waiver">
-                 </div>
+                 </div> -->
             <div class="col-md-4">
               <input type="hidden" class="form-control" name="consultation_id" id="consultation_id"
                 value={{ $consultations->id }}>
