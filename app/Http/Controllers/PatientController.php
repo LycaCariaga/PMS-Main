@@ -28,6 +28,7 @@ class PatientController extends Controller
 
       $input = $request->all();
       $input['history'] = $request->input('history');
+      
       Patient::create($input);
 
       return redirect()->route('patient.index');
@@ -45,6 +46,7 @@ class PatientController extends Controller
 
    public function edit(Request $request)
    {
+      // $history = Patient::where('patient_id','=',$request->id)->history->get()->toArray();
       $patient = Patient::find($request->id);
       $departments = Department::all();
       $request->get('history[]');

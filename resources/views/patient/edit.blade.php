@@ -99,6 +99,8 @@
                       <div class="row g-2">
                         <ul>
                           <div class="mx-auto" style="width: 200px;">
+                            {{-- @if (in_array($patient->history) != null)
+                            @endif --}}
 
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" name="history[]" id="flexCheckDiabetes"
@@ -258,7 +260,20 @@
                                 None
                               </label>
                             </div>
-                            <!--  -->
+                            <div>
+                              <input class="form-check-input invisible" type="checkbox" name="history[]" value="others"
+                                id="flexCheckOthers" {{ in_array('Others', $patient->history) ? 'checked' : '' }}
+                                {{ in_array('None', $patient->history) ? 'disabled' : '' }}>
+                            </div>
+                            <div class="form-group">
+                              <label class="form-check-label" for="flexCheckOthers">
+                                Others
+                              </label> {{-- do not press enter, nasisira formatting --}}
+                              <textarea id=otherstext name="history_others" class="form-control" type="text"
+                                placeholder="Leave blank if none">{{ $patient->history_others }}</textarea>
+                              <small id="othershelp" class="form-text text-muted">If multiple, please seperate by
+                                comma.</small>
+                            </div>
                           </div>
                         </ul>
 

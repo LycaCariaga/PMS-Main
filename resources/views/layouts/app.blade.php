@@ -107,6 +107,16 @@
 </script> --}}
 
 <script>
+  $("#otherstext").keyup(function() {
+    if ($(this).val() != "") {
+      $('#flexCheckOthers').prop('checked', true);
+    } else {
+      $('#flexCheckOthers').prop('checked', false);
+    }
+  })
+</script>
+
+<script>
   function ckChange(el) {
     var ckName = document.getElementsByName(el.name);
     if (el.checked) {

@@ -14,7 +14,7 @@ class AddHistoryToPatients extends Migration
     public function up()
     {
         Schema::table('patients', function (Blueprint $table) {
-            $table->string('history')->default(NULL);
+            $table->string('history')->default('[]');
         });
     }
 

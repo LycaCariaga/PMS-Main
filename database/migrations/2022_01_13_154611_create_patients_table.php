@@ -20,7 +20,7 @@ class CreatePatientsTable extends Migration
             $table->string('last_name');
             $table->date('birthday');
             $table->string('gender');
-            
+
             $table->biginteger('department_id')->unsigned();
             $table->string('history_others')->nullable();
             $table->timestamps();
