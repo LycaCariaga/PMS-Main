@@ -13,7 +13,7 @@
               <label for="medicine" class="form-label text-primary">
                 <h6>Medicine Name</h6>
               </label>
-              <input type="text" class="form-control" name="medicine" id="medicine">
+              <input type="text" class="form-control" name="medicine" id="medicine" required>
               <!-- <label for="medicine" class="form-label text-primary">
                 <h6>Quantity</h6>
               </label> -->
@@ -33,7 +33,7 @@
               <label for="supply" class="form-label text-primary">
                 <h6>Supply Name</h6>
               </label>
-              <input type="text" class="form-control" name="supply" id="supply">
+              <input type="text" class="form-control" name="supply" id="supply" required>
               <!-- <label for="supply" class="form-label text-primary">
                 <h6>Quantity</h6>
               </label>

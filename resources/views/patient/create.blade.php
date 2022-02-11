@@ -2,6 +2,22 @@
 
 @section('content')
 
+  {{-- for history chbx validation/ is working but looks fugly --}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('button').click(function() {
+        checked = $("input[type=checkbox]:checked").length;
+
+        if (!checked) {
+          alert("Please select one checkbox to submit.");
+          return false;
+        }
+
+      });
+    });
+  </script>
+
   <section class="section">
     <div class="section-header">
       <h3 class="page__heading">Patient Management</h3>
@@ -29,22 +45,22 @@
                   @csrf
                   <div class="col-md-6">
                     <label for="lastname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" name="last_name" id="last_name">
+                    <input type="text" class="form-control" name="last_name" id="last_name" required>
                   </div>
 
                   <div class="col-md-6">
                     <label for="birthday" class="form-label">Birthday</label>
-                    <input type="date" class="form-control" name="birthday" id="birthday">
+                    <input type="date" class="form-control" name="birthday" id="birthday" required>
                   </div>
 
                   <div class="col-md-6">
                     <label for="firstname" class="form-label">First Name</label>
-                    <input type="text" class="form-control" name="first_name" id="first_name">
+                    <input type="text" class="form-control" name="first_name" id="first_name" required>
                   </div>
 
                   <div class="col-md-6">
                     <label>Department</label>
-                    <select class="form-control" name="department_id">
+                    <select class="form-control" name="department_id" required>
                       @foreach ($departments as $department)
                         <option value="{{ $department->id }}">{{ $department->department }}</option>
                       @endforeach
@@ -53,19 +69,19 @@
 
                   <div class="col-md-6">
                     <label for="middlename" class="form-label">Middle Name</label>
-                    <input type="text" class="form-control" name="middle_name" id="middle_name">
+                    <input type="text" class="form-control" name="middle_name" id="middle_name" required>
                   </div>
 
                   <div class="col-md-6">
                     <label>Gender</label>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="Male" name="gender" id="male">
+                      <input class="form-check-input" type="radio" value="Male" name="gender" id="male" required>
                       <label class="form-check-label" for="male">
                         Male
                       </label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" value="Female" name="gender" id="female">
+                      <input class="form-check-input" type="radio" value="Female" name="gender" id="female" required>
                       <label class="form-check-label" for="female">
                         Female
                       </label>
@@ -235,8 +251,10 @@
                             </div>
                             <div class="form-group">
                               Others
-                              <textarea id=otherstext name="history_others" class="form-control" type="text" placeholder="Leave blank if none"></textarea>
-                              <small id="othershelp" class="form-text text-muted">If multiple, please seperate by comma.</small>
+                              <textarea id=otherstext name="history_others" class="form-control" type="text"
+                                placeholder="Leave blank if none"></textarea>
+                              <small id="othershelp" class="form-text text-muted">If multiple, please seperate by
+                                comma.</small>
                             </div>
                           </div>
 
@@ -265,5 +283,4 @@
           </div>
         </div>
   </section>
-
 @endsection

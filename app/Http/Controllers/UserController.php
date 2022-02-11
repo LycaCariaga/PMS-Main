@@ -50,6 +50,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->company = $request->company;
         $user->role = $request->role;
+        dd($user);
         $user->save();
        
         return redirect()->route('user.index');

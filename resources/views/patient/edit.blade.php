@@ -1,6 +1,22 @@
 @extends('layouts.app')
 @section('content')
 
+  {{-- for history chbx validation/ is working but looks fugly --}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('button').click(function() {
+        checked = $("input[type=checkbox]:checked").length;
+
+        if (!checked) {
+          alert("Please select one checkbox to submit.");
+          return false;
+        }
+
+      });
+    });
+  </script>
+
   <section class="section">
     <div class="section-header">
       <h3 class="page__heading">Patient Management</h3>
@@ -30,19 +46,19 @@
                   <div class="col-md-6">
                     <label for="lastname" class="form-label">Last Name</label>
                     <input type="text" class="form-control" name="last_name" id="last_name"
-                      value="{{ $patient->last_name }}">
+                      value="{{ $patient->last_name }}" required>
                   </div>
 
                   <div class="col-md-6">
                     <label for="birthday" class="form-label">Birthday</label>
                     <input type="date" class="form-control" name="birthday" id="birthday"
-                      value="{{ $patient->birthday }}">
+                      value="{{ $patient->birthday }}" required>
                   </div>
 
                   <div class="col-md-6">
                     <label for="firstname" class="form-label">First Name</label>
                     <input type="text" class="form-control" name="first_name" id="first_name"
-                      value="{{ $patient->first_name }}">
+                      value="{{ $patient->first_name }}" required>
                   </div>
 
 
@@ -61,21 +77,21 @@
                   <div class="col-md-6">
                     <label for="middlename" class="form-label">Middle Name</label>
                     <input type="text" class="form-control" name="middle_name" id="middle_name"
-                      value="{{ $patient->middle_name }}">
+                      value="{{ $patient->middle_name }}" required>
                   </div>
 
                   <div class="col-md-6">
                     <label>Gender</label>
                     <div class="form-check" value="{{ $patient->gender }}"> {{-- the hell is this --}}
                       <input class="form-check-input" type="radio" value="Male" name="gender" id="male"
-                        {{ $patient->gender == 'Male' ? 'checked' : '' }}>
+                        {{ $patient->gender == 'Male' ? 'checked' : '' }} required>
                       <label class="form-check-label" for="male">
                         Male
                       </label>
                     </div>
                     <div class="form-check">
                       <input class="form-check-input" type="radio" value="Female" name="gender" id="female"
-                        {{ $patient->gender == 'Female' ? 'checked' : '' }}>
+                        {{ $patient->gender == 'Female' ? 'checked' : '' }} required>
                       <label class="form-check-label" for="female">
                         Female
                       </label>

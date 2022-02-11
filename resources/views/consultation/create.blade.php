@@ -16,35 +16,36 @@
 
                 <div class="col-md-4">
                   <label for="bp" class="form-label">Blood Pressure</label>
-                  <input type="text" class="form-control" name="BP" id="BP">
+                  <input type="text" class="form-control" name="BP" id="BP" required>
                 </div>
 
                 <div class="col-md-4">
                   <label for="temp" class="form-label">Temperature</label>
-                  <input type="text" class="form-control" name="temp" id="temp">
+                  <input type="text" class="form-control" name="temp" id="temp" required>
                 </div>
                 <div class="col-md-4">
                   <label for="resrate" class="form-label">Respiratory
                     Rate</label>
-                  <input type="text" class="form-control" name="RR" id="RR">
+                  <input type="text" class="form-control" name="RR" id="RR" required>
                 </div>
                 <div class="col-md-4">
                   <label for="capref" class="form-label">Capillary
                     Refill</label>
-                  <input type="text" class="form-control" name="CR" id="CR">
+                  <input type="text" class="form-control" name="CR" id="CR" required>
                 </div>
                 <div class="col-md-4">
                   <label for="weight" class="form-label">Weight</label>
-                  <input type="text" class="form-control" name="weight" id="weight">
+                  <input type="text" class="form-control" name="weight" id="weight" required>
                 </div>
                 <div class="col-md-4">
                   <label for="pulrate" class="form-label">Pulse Rate</label>
-                  <input type="text" class="form-control" name="PR" id="PR">
+                  <input type="text" class="form-control" name="PR" id="PR" required>
                 </div>
 
                 {{-- hindi napapass yung patient-id kase wala nmn dito sa form. so eto yung workaround natin. --}}
                 <div class="col-md-4">
-                  <input type="hidden" class="form-control" name="patient_id" id="patient_id" value={{ $patients->id }}>
+                  <input type="hidden" class="form-control" name="patient_id" id="patient_id"
+                    value={{ $patients->id }} required>
                 </div>
             </div>
 
@@ -54,20 +55,23 @@
               <form class="row">
                 <div class="col-md-2">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioTooth" value="Toothache">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()"
+                      id="flexRadioTooth" value="Toothache" required>
                     <label class="form-check-label" for="flexRadioTooth">
                       Toothache
                     </label>
                   </div>
 
                   <div class="form-check ">
-                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioLGF" value="Low Grade Fever">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()"
+                      id="flexRadioLGF" value="Low Grade Fever" required>
                     <label class="form-check-label" for="flexRadioLGF">
                       Low Grade Fever
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioBP" value="Body Pain">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()"
+                      id="flexRadioBP" value="Body Pain" required>
                     <label class="form-check-label" for="flexRadioBP">
                       Body Pain
                     </label>
@@ -76,35 +80,38 @@
 
                 <div class="col-md-2">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioLBM" value="LBM">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()"
+                      id="flexRadioLBM" value="LBM" required>
                     <label class="form-check-label" for="flexRadioLBM">
                       LBM
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioCut" value="Cut">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()"
+                      id="flexRadioCut" value="Cut" required>
                     <label class="form-check-label" for="flexRadioCut">
                       Cut
                     </label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioWound" value="Wound">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()"
+                      id="flexRadioWound" value="Wound" required>
                     <label class="form-check-label" for="flexRadioWound">
                       Wound
                     </label>
                   </div>
-                  <div class="form-check form-check-inline">
-                  <label onClick="otherFruit()">
-                    <input class="form-check-input" type="radio" name="complaint" id="other_complaint" value="other" >or other fruit:</input>
-                    <input type ="text" name="complaint" id="other_text"/></label>
-                   
-                  </div>
+                  {{-- <div class="form-check form-check-inline">
+                    <label onClick="otherFruit()">
+                      <input class="form-check-input" type="radio" name="complaint" id="other_complaint" value="other">
+                      <input type="text" name="complaint" id="other_text" />
+                    </label>
+
+                  </div> --}}
                 </div>
                 <div class="modal-footer text-right">
                   <div class="container d-flex justify-content-end">
 
-                    <button type="submit" class="btn btn-icon icon-left btn-primary mr-5"><i
-                        class="far fa-save"></i>
+                    <button type="submit" class="btn btn-icon icon-left btn-primary mr-5"><i class="far fa-save"></i>
                       Save
                     </button>
               </form>
@@ -115,22 +122,23 @@
             </div>
           </div>
         </div>
-    <!-- content1 end -->
+        <!-- content1 end -->
 
-<script>
-function otherComplaint(){
-a=document.getElementById('other_complaint');
-a.checked=true;
-}
-function regularFruit(){
-a=document.getElementById('other_text');
-a.value="";
-}
-</script>
+        <script>
+          function otherComplaint() {
+            a = document.getElementById('other_complaint');
+            a.checked = true;
+          }
 
-        </div>
+          function regularFruit() {
+            a = document.getElementById('other_text');
+            a.value = "";
+          }
+        </script>
+
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
