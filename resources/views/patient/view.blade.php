@@ -120,6 +120,7 @@
   </section>
   <!-- Modal -->
   @foreach ($consultations as $consultation)
+  @foreach ($interventions as $intervention)
     <div class="modal fade" id="yourModal{{ $consultation->id }}" tabindex="-1" role="dialog"
       aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -131,7 +132,9 @@
 
           </div>
           <div class="modal-body">
+            
             @if ($patients->id == $consultation->patient_id)
+           
               <h6>ID: {{ $consultation->id }}</h6>
               <h6>Full Name: {{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }}
                 {{ $consultation->patient->last_name }}</h6>
@@ -143,9 +146,13 @@
               <h6>Weight: {{ $consultation->weight }}</h6>
               <h6>Pulse Rate: {{ $consultation->PR }}</h6>
               <h6>Complaint: {{ $consultation->complaint }}</h6>
+             <hr>
+              <h6>Medicine: {{ $intervention->medicine }}</h6>
+              <h6>Supply: {{ $intervention->supply }}</h6>
 
-
+          
             @endif
+           
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -154,6 +161,7 @@
         </div>
       </div>
     </div>
+    @endforeach
   @endforeach
 
   {{-- bkt may pagala galang /div dito --}}

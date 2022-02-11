@@ -54,20 +54,20 @@
               <form class="row">
                 <div class="col-md-2">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="complaint" id="flexRadioTooth" value="Toothache">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioTooth" value="Toothache">
                     <label class="form-check-label" for="flexRadioTooth">
                       Toothache
                     </label>
                   </div>
 
                   <div class="form-check ">
-                    <input class="form-check-input" type="radio" name="complaint" id="flexRadioLGF" value="Low Grade Fever">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioLGF" value="Low Grade Fever">
                     <label class="form-check-label" for="flexRadioLGF">
                       Low Grade Fever
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="complaint" id="flexRadioBP" value="Body Pain">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioBP" value="Body Pain">
                     <label class="form-check-label" for="flexRadioBP">
                       Body Pain
                     </label>
@@ -76,22 +76,28 @@
 
                 <div class="col-md-2">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="complaint" id="flexRadioLBM" value="LBM">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioLBM" value="LBM">
                     <label class="form-check-label" for="flexRadioLBM">
                       LBM
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="complaint" id="flexRadioCut" value="Cut">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioCut" value="Cut">
                     <label class="form-check-label" for="flexRadioCut">
                       Cut
                     </label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="complaint" id="flexRadioWound" value="Wound">
+                    <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()" id="flexRadioWound" value="Wound">
                     <label class="form-check-label" for="flexRadioWound">
                       Wound
                     </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                  <label onClick="otherFruit()">
+                    <input class="form-check-input" type="radio" name="complaint" id="other_complaint" value="other" >or other fruit:</input>
+                    <input type ="text" name="complaint" id="other_text"/></label>
+                   
                   </div>
                 </div>
                 <div class="modal-footer text-right">
@@ -110,6 +116,17 @@
           </div>
         </div>
     <!-- content1 end -->
+
+<script>
+function otherComplaint(){
+a=document.getElementById('other_complaint');
+a.checked=true;
+}
+function regularFruit(){
+a=document.getElementById('other_text');
+a.value="";
+}
+</script>
 
         </div>
       </div>

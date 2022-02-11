@@ -71,8 +71,8 @@
               <h6>Medicine Given: {{ $interventions->medicine }}</h6>
               <h6>Supply Given:  {{ $interventions->supply }}</h6>
               @foreach ($users as $user)
-<hr><h5> Prescribe By: {{ $user->firstName }} {{ $user->lastName }}</h5>
-@endforeach
+<!-- <hr><h5> Prescribe By: {{ $user->firstName }} {{ $user->lastName }}</h5>
+@endforeach -->
             </div>
           </div>
         </div>
