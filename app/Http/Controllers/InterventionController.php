@@ -44,9 +44,34 @@ class InterventionController extends Controller
   public function store(Request $request)
   {
     $consultation = Consultation::find($request->consultation_id);
-    Intervention::create(
-      $request->all()
-    );
+    // wag na daw gamitin to sabi ni god coder Jonah. Deprecated
+    // Intervention::create(
+    //   $request->all()
+    // );
+    
+    $intervention = new Intervention;
+    $intervention->medicine = $request->medicine;
+    $intervention->medicineQuantity = $request->medicineQuantity;
+    $intervention->supply = $request->supply;
+    $intervention->supplyQuantity = $request->supplyQuantity;
+    $intervention->intervention = $request->intervention;
+    $intervention->ClinicRestNoM = $request->ClinicRestNoM;
+    $intervention->ClinicRestApproved = $request->ClinicRestApproved;
+    $intervention->SentHomeApproved = $request->SentHomeApproved;
+    $intervention->SentToEmergencyRoomER = $request->SentToEmergencyRoomER;
+    $intervention->SentToEmergencyRoomWitness = $request->SentToEmergencyRoomWitness;
+    // $intervention->SentToEmergencyRoomWaiver = $request->SentToEmergencyRoomWaiver;
+    $intervention->consultation_id = $request->consultation_id;
+
+    // for single file uploading
+    $upload = $request->file('SentToEmergencyRoomWaiverName');
+    $path = $upload->storeAs('waivers',$upload->getClientOriginalName(), 'public');
+
+    $intervention->SentToEmergencyRoomWaiverName = $upload->getClientOriginalName();
+    $intervention->SentToEmergencyRoomWaiverFile = $path;
+
+    
+    $intervention->save();
 
     return redirect()->route('intervention.index', ['id' => $consultation]);
   }

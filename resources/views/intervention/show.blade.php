@@ -64,11 +64,11 @@
               <div class="table">
                 <div class="row">
                   <!-- <div class="col-md-12">
-                  <h6 class=" text-primary p-2">Medical History</h6>
-    <hr>
+                          <h6 class=" text-primary p-2">Medical History</h6>
+            <hr>
 
-                   
-                </div> -->
+                           
+                        </div> -->
                   <div class="col-md-12">
                     <h6 class=" text-primary p-2">Vital Signs</h6>
                     <h6>Date of Consultation: {{ $interventions->consultation->created_at }}</h6>
@@ -90,10 +90,38 @@
                   <div class="col-md-12">
                     <h6 class=" text-primary p-2">Intervention</h6>
                     <h6>Medicine Given: {{ $interventions->medicine }}</h6>
+                    <h6>Medicine Quantity: {{ $interventions->medicineQuantity }}</h6>
                     <h6>Supply Given: {{ $interventions->supply }}</h6>
-                    @foreach ($users as $user)
-                      <!-- <hr><h5> Prescribe By: {{ $user->firstName }} {{ $user->lastName }}</h5>
-  @endforeach -->
+                    <h6>Supply Quantity: {{ $interventions->supplyQuantity }}</h6>
+                    <h6>Intervention Given:
+                      @if ($interventions->intervention == 'ClinicRest')
+                        Clinic Rest
+
+                      @elseif ($interventions->intervention == 'SentHome')
+                        Sent Home
+
+                      @elseif ($interventions->intervention == 'SentToEmergencyRoom')
+                        Sent To Emergency Room
+                      @endif
+                    </h6>
+                    @if ($interventions->intervention == 'ClinicRest')
+                      <h6>Number of Minutes: {{ $interventions->ClinicRestNoM }}</h6>
+                      <h6>Approved By: {{ $interventions->ClinicRestApproved }}</h6>
+
+                    @elseif ($interventions->intervention == 'SentHome')
+                      <h6>Approved By: {{ $interventions->SentHomeApproved }}</h6>
+
+                    @elseif ($interventions->intervention == 'SentToEmergencyRoom')
+                      <h6>Emergency Room: {{ $interventions->SentToEmergencyRoomER }}</h6>
+                      <h6>Witness If Refused: {{ $interventions->SentToEmergencyRoomWitness }}</h6>
+                      <h6>Waiver: {{ $interventions->SentToEmergencyRoomWaiverName }}</h6>
+
+                    @endif
+
+                    {{-- @foreach ($users as $user)
+                      <hr>
+                      <h5> Prescribe By: {{ $user->firstName }} {{ $user->lastName }}</h5>
+                    @endforeach --}}
                   </div>
                 </div>
               </div>

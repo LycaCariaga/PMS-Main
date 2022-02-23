@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
   <section class="section">
 
     <div class="section-header">
@@ -91,13 +90,13 @@
                             </div>
                           </td>
                           <td>
-                            <!-- <form action="{{ route('consultation.show', $consultation->id) }}" method="get">
-                                      @csrf
-                                      <button type="submit" class="btn btn-icon icon-left btn-primary mr-3">
-                                       Intervention
-                                      </button>
-                                    </form>
-                                    </td> -->
+                            {{-- <form action="{{ route('consultation.show', $consultation->id) }}" method="get">
+                              @csrf
+                              <button type="submit" class="btn btn-icon icon-left btn-primary mr-3">
+                                Intervention
+                              </button>
+                            </form> --}}
+                          </td>
                         </tr>
                       @endif
                     @endforeach
@@ -120,47 +119,44 @@
   </section>
   <!-- Modal -->
   @foreach ($consultations as $consultation)
-  @foreach ($interventions as $intervention)
-    <div class="modal fade" id="yourModal{{ $consultation->id }}" tabindex="-1" role="dialog"
-      aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header bg-primary">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title text-white" id="myModalLabel"></h4>
+    @foreach ($interventions as $intervention)
+      <div class="modal fade" id="yourModal{{ $consultation->id }}" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title text-white" id="myModalLabel"></h4>
 
-          </div>
-          <div class="modal-body">
-            
-            @if ($patients->id == $consultation->patient_id)
-           
-              <h6>ID: {{ $consultation->id }}</h6>
-              <h6>Full Name: {{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }}
-                {{ $consultation->patient->last_name }}</h6>
-              <h6>Date of Consultation: {{ $consultation->created_at }}</h6>
-              <h6>Blood Pressure: {{ $consultation->BP }}</h6>
-              <h6>Temperature: {{ $consultation->temp }}</h6>
-              <h6>Respiratory Rate: {{ $consultation->RR }}</h6>
-              <h6>Capillary Refill: {{ $consultation->CR }}</h6>
-              <h6>Weight: {{ $consultation->weight }}</h6>
-              <h6>Pulse Rate: {{ $consultation->PR }}</h6>
-              <h6>Complaint: {{ $consultation->complaint }}</h6>
-             <hr>
-              <h6>Medicine: {{ $intervention->medicine }}</h6>
-              <h6>Supply: {{ $intervention->supply }}</h6>
+            </div>
+            <div class="modal-body">
 
-          
-            @endif
-           
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              @if ($patients->id == $consultation->patient_id)
+                <h6>ID: {{ $consultation->id }}</h6>
+                <h6>Full Name: {{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }}
+                  {{ $consultation->patient->last_name }}</h6>
+                <h6>Date of Consultation: {{ $consultation->created_at }}</h6>
+                <h6>Blood Pressure: {{ $consultation->BP }}</h6>
+                <h6>Temperature: {{ $consultation->temp }}</h6>
+                <h6>Respiratory Rate: {{ $consultation->RR }}</h6>
+                <h6>Capillary Refill: {{ $consultation->CR }}</h6>
+                <h6>Weight: {{ $consultation->weight }}</h6>
+                <h6>Pulse Rate: {{ $consultation->PR }}</h6>
+                <h6>Complaint: {{ $consultation->complaint }}</h6>
+                <hr>
+                <h6>Medicine: {{ $intervention->medicine }}</h6>
+                <h6>Supply: {{ $intervention->supply }}</h6>
+              @endif
 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
     @endforeach
   @endforeach
 
@@ -175,5 +171,4 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
 @endsection

@@ -53,7 +53,7 @@
               <br>
               <h6 class="bg-primary text-white p-2">Complaints</h6>
               <form class="row">
-                <div class="col-md-2">
+                <div class="col-md-auto">
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()"
                       id="flexRadioTooth" value="Toothache" required>
@@ -78,7 +78,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-auto">
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="complaint" onClick="regularComplaint()"
                       id="flexRadioLBM" value="LBM" required>

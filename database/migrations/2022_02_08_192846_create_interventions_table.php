@@ -17,7 +17,17 @@ class CreateInterventionsTable extends Migration
             $table->bigIncrements('id');
             $table->biginteger('consultation_id')->unsigned();
             $table->string('medicine');
+            $table->integer('medicineQuantity');
             $table->string('supply');
+            $table->integer('supplyQuantity');
+            $table->string('intervention');
+            $table->string('ClinicRestNoM')->nullable();
+            $table->string('ClinicRestApproved')->nullable();
+            $table->string('SentHomeApproved')->nullable();
+            $table->string('SentToEmergencyRoomER')->nullable();
+            $table->string('SentToEmergencyRoomWitness')->nullable();
+            $table->string('SentToEmergencyRoomWaiverName')->nullable();
+            $table->string('SentToEmergencyRoomWaiverFile')->nullable();
             $table->timestamps();
             $table->foreign('consultation_id')->references('id')->on('consultations')
             ->onUpdate('cascade')
