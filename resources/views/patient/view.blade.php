@@ -42,7 +42,8 @@
               </div>
 
               <hr>
-              <h4 class="text-primary text-center">{{ $patients->first_name }} {{ $patients->middle_name }}
+              <h4 class="text-primary text-center">{{ $patients->first_name }}
+                {{ $patients->middle_name }}
                 {{ $patients->last_name }} </h4>
               <h6>AGE: {{ $patients->getAge() }}</h6>
               <h6>DATE OF BIRTH: {{ $patients->birthday }}</h6>
@@ -134,7 +135,8 @@
 
               @if ($patients->id == $consultation->patient_id)
                 <h6>ID: {{ $consultation->id }}</h6>
-                <h6>Full Name: {{ $consultation->patient->first_name }} {{ $consultation->patient->middle_name }}
+                <h6>Full Name: {{ $consultation->patient->first_name }}
+                  {{ $consultation->patient->middle_name }}
                   {{ $consultation->patient->last_name }}</h6>
                 <h6>Date of Consultation: {{ $consultation->created_at }}</h6>
                 <h6>Blood Pressure: {{ $consultation->BP }}</h6>
